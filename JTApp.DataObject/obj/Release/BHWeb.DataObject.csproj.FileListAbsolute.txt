@@ -1,0 +1,10 @@
+D:\项目文件\VS_Projects\建材学院民主测评系统\BHWeb.DataObject\bin\Release\BHWeb.DataObject.dll
+D:\项目文件\VS_Projects\建材学院民主测评系统\BHWeb.DataObject\bin\Release\BHWeb.DataObject.pdb
+D:\项目文件\VS_Projects\建材学院民主测评系统\BHWeb.DataObject\obj\Release\BHWeb.DataObject.dll
+D:\项目文件\VS_Projects\建材学院民主测评系统\BHWeb.DataObject\obj\Release\BHWeb.DataObject.pdb
+D:\项目文件\VS_Projects\建材学院民主测评系统\BHWeb.DataObject\obj\Release\BHWeb.DataObject.csprojResolveAssemblyReference.cache
+D:\建材学院民主测评系统\建材学院民主测评系统源码\BHWeb.DataObject\bin\Release\BHWeb.DataObject.dll
+D:\建材学院民主测评系统\建材学院民主测评系统源码\BHWeb.DataObject\bin\Release\BHWeb.DataObject.pdb
+D:\建材学院民主测评系统\建材学院民主测评系统源码\BHWeb.DataObject\obj\Release\BHWeb.DataObject.csprojResolveAssemblyReference.cache
+D:\建材学院民主测评系统\建材学院民主测评系统源码\BHWeb.DataObject\obj\Release\BHWeb.DataObject.dll
+D:\建材学院民主测评系统\建材学院民主测评系统源码\BHWeb.DataObject\obj\Release\BHWeb.DataObject.pdb

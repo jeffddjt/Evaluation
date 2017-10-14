@@ -1,0 +1,345 @@
+﻿@using JTApp.DataObject;
+@{
+    Layout = null;
+    UserInfoDataObject userInfo = ViewData["UserInfo"] as UserInfoDataObject;
+    List<DepartmentDataObject> departList = ViewData["DepartmentList"] as List<DepartmentDataObject>;
+    int[] beMesuredUserIDs = userInfo.BeMeasuredUserInfoIDs;
+    
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>建材学院测评系统后台</title>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="0">
+    <link rel="stylesheet" href="~/Assets/css/index.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="~/Assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/tendina.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/common.js"></script>
+    <script type="text/javascript">
+        function setTitle(title) {
+            $(".main_h").text(title);            
+        }
+    </script>
+    <style>
+        #div_changePassword {
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            background:rgba(255,255,255,0.5);
+        }
+        #dialog {
+            width: 320px;
+            height: 240px;
+            background: #f8f8f8;
+            position:relative;
+            left:50%;
+            top:50%;
+            margin-top:-120px;
+            margin-left:-160px;
+            border-radius:5px 5px;
+            box-shadow:0px 0px 10px #000;
+        }
+    </style>
+    <script type="text/javascript">
+        function checkPassword() {
+            var pass = $("#password").val().trim();
+            var rePass = $("#rePassword").val().trim();
+            if (pass.length <= 0) {
+                return false;
+            }
+            if (pass != rePass) {
+                alert("新密码与确认密码不一致!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+        window.history.forward(1);
+    </script>
+    <!--顶部-->
+    <div class="layout_top_header">
+        <div style="float: left" class="logo_bg">
+            <span class="logo">河北建材职业技术学院中层干部年度评价考核系统</span>
+        </div>
+        <div class="right">
+            <form id="Form2">
+                <span>
+                 @userInfo.UserName
+                </span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="UserCenter" target="menuFrame">个人中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="Logout" class="ad_setting_a" ID="LinkButton2">退出</a>
+                &nbsp;&nbsp;
+            </form>
+        </div>
+    </div>
+    <!--顶部结束-->
+    <!--菜单-->
+    <div class="layout_left_menu">
+        <span class="n_bg">系统管理</span>
+        <ul id="menu">
+            @if (userInfo.FunctionList.Contains("测评管理"))
+            {
+            <li id="pcgl" class="childUlLi" >
+                <a href="javascript:void(0);" target="menuFrame">
+                    <i class="glyph-icon icon-home"></i>测评管理
+                </a>
+                <ul>
+                    <li>
+                        <a href="../Article/Index" target="menuFrame" onclick="setTitle('登录页文章修改')">
+                            <i class="glyph-icon icon-chevron-right">
+                            </i>登录页文章修改
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Department/DepartmentManage" target="menuFrame" onclick="setTitle('组织机构管理')">
+                            <i class="glyph-icon icon-chevron-right"></i>
+                            组织机构管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Rights/RoleManage" target="menuFrame" onclick="setTitle('角色管理')">
+                            <i class="glyph-icon icon-chevron-right"></i>
+                            角色管理
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../Duties/DutiesManage" target="menuFrame" onclick="setTitle('人员职务管理')">
+                            <i class="glyph-icon icon-chevron-right"></i>
+                            人员职务管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Review/Index" target="menuFrame" onclick="setTitle('测评表管理')">
+                            <i class="glyph-icon icon-chevron-right">
+                            </i>测评表管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../PersonManage/PartakePerson" target="menuFrame" onclick="setTitle('参与测评人员管理')">
+                            <i class="glyph-icon icon-chevron-right">
+                            </i>参与测评人员管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../PersonManage/Person" target="menuFrame" onclick="setTitle('被测评人员管理')">
+                            <i class="glyph-icon icon-chevron-right">
+                            </i>被测评人员管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="TimeOver" target="menuFrame" onclick="setTitle('测评结束时间选择')">
+                            <i class="glyph-icon icon-chevron-right">
+                            </i>测评结束时间选择
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            }
+            @if (userInfo.FunctionList.Contains("测评人员查询"))
+            {
+                <li id="Li1" class="childUlLi">
+                    <a href="javascript:void(0);" target="menuFrame">
+                        <i class="glyph-icon icon-home"></i>测评人员查询
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="~/EvaluationResult/Already" target="menuFrame" onclick="setTitle('民主测评已评')">
+                                <i class="glyph-icon icon-chevron-right">
+                                </i>民主测评已评
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/EvaluationResult/Havent" target="menuFrame" onclick="setTitle('民主测评未评')">
+                                <i class="glyph-icon icon-chevron-right">
+                                </i>民主测评未评
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/EvaluationResult/StyleOfWorkAlready" target="menuFrame" onclick="setTitle('德和作风测评已评')">
+                                <i class="glyph-icon icon-chevron-right">
+                                </i>德和作风测评已评
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/EvaluationResult/StyleOfWorkHavent" target="menuFrame" onclick="setTitle('德和作风测评未评')">
+                                <i class="glyph-icon icon-chevron-right">
+                                </i>德和作风测评未评
+                            </a>
+                        </li>
+                        @foreach (DepartmentDataObject dept in departList.Where(p => p.ParentID == 0))
+                        {
+                            <li>
+                                <a href="~/EvaluationResult/GetEvaluationCount?deptID=@dept.ID" target="menuFrame" onclick="setTitle('民主测评(@dept.Name)投票数')">
+                                    <i class="glyph-icon icon-chevron-right">
+                                    </i>民主测评(@dept.Name)投票数
+                                </a>
+                            </li>
+                        }
+                        @foreach (DepartmentDataObject dept in departList.Where(p => p.ParentID == 0))
+                        {
+                            <li>
+                                <a href="~/EvaluationResult/GetStyleOfWorkCount?deptID=@dept.ID" target="menuFrame" onclick="setTitle('德和作风(@dept.Name)投票数')">
+                                    <i class="glyph-icon icon-chevron-right">
+                                    </i>德和作风(@dept.Name)投票数
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+            @if (userInfo.FunctionList.Contains("民主测评"))
+            {
+                foreach (DepartmentDataObject department in departList)
+                {
+                    <li class="childUlLi">
+                        <a href="javascript:void(0);"
+                           target="menuFrame"><i class="glyph-icon icon-reorder"></i>民主测评(@department.Name)</a>
+                        <ul>
+                            @foreach (UserInfoDataObject member in department.GetAllUserList())
+                    {
+                        if (!beMesuredUserIDs.Contains(member.ID))
+                        { continue; }
+                        <li>
+                            <a href="~/Evaluation/FillEvaluationTable?id=@member.ID" target="menuFrame" onclick="setTitle('民主测评(@department.Name)-@member.UserName')">
+                                <i class="glyph-icon icon-chevron-right"></i>
+                                @member.UserName
+                            </a>
+                        </li>
+                            }
+                        </ul>
+                    </li>
+                }
+            }
+            @if (userInfo.FunctionList.Contains("德和作风"))
+            {
+                foreach (DepartmentDataObject department in departList)
+                {
+                <li class="childUlLi">
+                    <a href="javascript:void(0);"
+                       target="menuFrame"><i class="glyph-icon icon-reorder"></i>德和作风(@department.Name)</a>
+                    <ul>
+                        @foreach (UserInfoDataObject member in department.GetAllUserList())
+                        {
+                            if (!beMesuredUserIDs.Contains(member.ID))
+                            { continue; }
+                            <li>
+                                <a href="~/Evaluation/StyleOfWork?id=@member.ID" target="menuFrame" onclick="setTitle('德和作风(@department.Name)-@member.UserName')">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    @member.UserName
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+                }
+            }
+           @if (userInfo.FunctionList.Contains("民主测评结果"))
+           {
+            <li id="MzJg" class="childUlLi">
+                <a href="javascript:void(0);" target="menuFrame">
+                    <i class="glyph-icon icon-reorder"></i>民主测评结果
+                </a>
+                <ul>
+                    @foreach (DepartmentDataObject dept in departList)
+                    {
+                    <li>
+                        <a href="~/EvaluationResult/EvaluationTotal?deptID=@dept.ID" target="menuFrame" onclick="setTitle('民主测评总评(@dept.Name)')">
+                            <i class="glyph-icon icon-chevron-right">
+                            </i>民主测评总评(@dept.Name)
+                        </a>
+                    </li>
+                    }
+                </ul>
+            </li>
+           }
+            @if (userInfo.FunctionList.Contains("德和作风反向测评结果"))
+            {
+            <li id="DhJg" class="childUlLi">
+                <a href="javascript:void(0);" target="menuFrame">
+                    <i class="glyph-icon icon-reorder"></i>德和作风反向测评结果
+                </a>
+                <ul>
+                    @foreach (DepartmentDataObject dept in departList)
+                    {
+                        <li>
+                            <a href="~/EvaluationResult/StyleOfWorkTotal?deptID=@dept.ID" target="menuFrame" onclick="setTitle('德和作风测评结果(@dept.Name)')">
+                                <i class="glyph-icon icon-chevron-right">
+                                </i>德和作风测评结果(@dept.Name)
+                            </a>
+                        </li>
+                    }
+                    @foreach (DepartmentDataObject dept in departList)
+                    {
+                        <li>
+                            <a href="~/EvaluationResult/StyleOfWorkTotalCount?deptID=@dept.ID" target="menuFrame" onclick="setTitle('德和作风测评结果(@dept.Name)')">
+                                <i class="glyph-icon icon-chevron-right">
+                                </i>德和作风测评票数(@dept.Name)
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </li>
+            }
+        </ul>
+    </div>
+    <!--菜单-->
+    <div id="layout_right_content" class="layout_right_content">
+        <div class="route_bg">
+            <span class="main_h">主页</span>
+            <!--
+            <a href="#">主页</a><i class="glyph-icon icon-chevron-right"></i>
+            <a href="#">菜单管理</a>
+            -->
+        </div>
+        <div class="mian_content">
+            <div id="page_content">
+                <iframe id="menuFrame" name="menuFrame" src="Time" style="overflow: visible;"
+                        scrolling="auto" frameborder="no" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="layout_footer">
+        <p>
+            Copyright © 2016 - 秦皇岛博赫科技开发有限公司
+        </p>
+    </div>
+    @if (userInfo.Password == "12345" || userInfo.Password == "123")
+    {
+    <div id="div_changePassword">
+        <div id="dialog">
+            <div style="text-align:center;height:50px;width:100%;line-height:25px;margin-bottom:30px;"><h5>您正使用原始密码登录<br />为了您账户的安全请及时修改密码!</h5></div>
+            <form action="ChangePassword" method="post" onsubmit="return checkPassword()">
+                <table width="100%" cellspacing="5">
+                    <tr style="height:30px;">
+                        <td>新密码：</td>
+                        <td><input type="password" id="password" name="password" /></td>
+                    </tr>
+                    <tr style="height:30px;">
+                        <td>确认新密码：</td>
+                        <td><input type="password" id="rePassword" name="rePassword" /></td>
+                    </tr>
+                    <tr style="height:30px;">
+                        <td colspan="2" style="text-align:center;">
+                            <input type="submit" value="确定" style="height:30px;width:50px;" />
+                            <input type="hidden" name="id" value="@userInfo.ID" />
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+    </div>
+    }
+</body>
+</html>
+

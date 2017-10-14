@@ -1,0 +1,82 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Time</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        body {
+            width: auto;
+            height: 100%;
+            background: url(../Assets/images/index_bg.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sy_text {
+            display: block;
+            width: auto;
+            text-align: center;
+            color: rgba(53,132,198,0.8);
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .home_l {
+            width: 532px;
+            height: 58px;
+            position: absolute;
+            left: 15%;
+        }
+
+        .home_r {
+            width: 477px;
+            height: 44px;
+            position: absolute;
+            left: 35%;
+        }
+
+        @@media screen and (min-height:768px) {
+            .home_l {
+                top: 20%;
+            }
+
+            .home_r {
+                top: 35%;
+            }
+
+            .sy_text {
+                padding-top: 380px;
+            }
+        }
+
+        @@media screen and (max-height:768px) {
+            .home_l {
+                top: 15%;
+            }
+
+            .home_r {
+                top: 30%;
+            }
+
+            .sy_text {
+                padding-top: 304px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <span class="sy_text">@ViewData["Msg"]</span>
+    </div>
+</body>
+</html>

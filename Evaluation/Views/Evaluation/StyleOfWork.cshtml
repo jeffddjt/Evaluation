@@ -1,0 +1,120 @@
+﻿@using BHWeb.DataObject;
+@{
+    Layout = null;
+    StyleOfWorkDataObject styleOfWork = ViewData["StyleOfWork"] as StyleOfWorkDataObject;
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StyleOfWork</title>
+    <link href="~/Assets/css/pagination.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Assets/js/jquery-1.3.2.min.js"></script>
+    <style type="text/css">
+        .tab {
+            margin: 0 auto;
+        }
+
+            .tab tr {
+                line-height: 25px;
+            }
+
+                .tab tr:hover {
+                    background-color: #ecebeb;
+                }
+
+            .tab td {
+                font-size: 13px;
+                padding: 0px 5px;
+            }
+
+        .sub {
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            width: 82px;
+            height: 35px;
+            line-height: 38px;
+            border-radius: 3px;
+            background: url(../Assets/images/sub_bg.gif) no-repeat;
+            cursor: pointer;
+            padding-left: 16px;
+            top: 0px;
+            margin-right: 0px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .score {
+            width: 30px;
+            height: 20px;
+            border-radius: 2px;
+            background-color: #FFF;
+            border: 1px #CCCCCC solid;
+        }
+
+        .btn {
+            display: block;
+            width: auto;
+            height: 30px;
+            background: url(../Assets/images/btn_bg_03.png) repeat-x;
+            border: 1px #d0d6f8 solid;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #666;
+            padding: 0 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $('#Button1').click(function () {
+                if ($('#rb1').attr("checked") == false && $('#rb2').attr("checked") == false && $('#rb3').attr("checked") == false) {
+                    alert("请选择总体评价！");
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="SaveStyleOfWork" method="post">
+        <div>
+            <table width="100%" border="1px" bordercolor="#FFFFFF" cellpadding="0" cellspacing="0"
+                   class="tab">
+                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                    <th width="20%">
+                        姓名
+                    </th>
+                    <th width="20%">
+                        总体评价
+                    </th>
+                </tr>
+                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                    <td style="text-align: center">
+                        @styleOfWork.BeMeasuredUserName   
+                        
+                    </td>
+                    <td style="text-align: center">
+                        <label><input type="radio" @(styleOfWork.Score!=100?"":"checked= 'checked'")  @(styleOfWork.Score>0? "disabled" : "") name="Score" value="100" />没有</label>
+                        <label><input type="radio" @(styleOfWork.Score!=80?"":"checked= 'checked'")   @(styleOfWork.Score>0? "disabled" : "") name="Score" value="80" />有些</label>
+                        <label><input type="radio" @(styleOfWork.Score!=50?"":"checked= 'checked'")   @(styleOfWork.Score>0? "disabled" : "") name="Score" value="50" />较严重</label>
+
+                    </td>
+                </tr>
+                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px" style="text-align: center">
+                    <td colspan="5">
+                        <input type="submit" value="提交" class="sub" @(styleOfWork.Score>0? "disabled" : "") />
+                        <input type="hidden" name="id" value="@styleOfWork.ID" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

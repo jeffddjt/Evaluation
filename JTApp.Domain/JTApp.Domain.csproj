@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F76497FB-6533-4F9D-AE54-22725B518074}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JTApp.Domain</RootNamespace>
+    <AssemblyName>JTApp.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\JTApp.WebUI\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AggregateRoot.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IRepositoryContext.cs" />
+    <Compile Include="Model\Article.cs" />
+    <Compile Include="Model\BeMeasured.cs" />
+    <Compile Include="Model\Department.cs" />
+    <Compile Include="Model\Duties.cs" />
+    <Compile Include="Model\EvaluationTable.cs" />
+    <Compile Include="Model\EvaluationTableDetail.cs" />
+    <Compile Include="Model\FuncModule.cs" />
+    <Compile Include="Model\Measured.cs" />
+    <Compile Include="Model\Review.cs" />
+    <Compile Include="Model\StyleOfWork.cs" />
+    <Compile Include="Model\TimeOver.cs" />
+    <Compile Include="Model\UserInfo.cs" />
+    <Compile Include="Model\UserRole.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IBeMeasuredRepository.cs" />
+    <Compile Include="Repository\IArticleRepository.cs" />
+    <Compile Include="Repository\IDepartmentRepository.cs" />
+    <Compile Include="Repository\IDutiesRepository.cs" />
+    <Compile Include="Repository\IEvaluationTableDetailRepository.cs" />
+    <Compile Include="Repository\IEvaluationTableRepository.cs" />
+    <Compile Include="Repository\IFuncModuleRepository.cs" />
+    <Compile Include="Repository\IMeasuredRepository.cs" />
+    <Compile Include="Repository\IReviewRepository.cs" />
+    <Compile Include="Repository\IStyleOfWorkRepository.cs" />
+    <Compile Include="Repository\ITimeOverRepository.cs" />
+    <Compile Include="Repository\IUserInfoRepository.cs" />
+    <Compile Include="Repository\IUserRoleRepository.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

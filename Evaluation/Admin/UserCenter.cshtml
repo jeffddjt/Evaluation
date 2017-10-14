@@ -1,0 +1,93 @@
+﻿@using BHWeb.DataObject;
+@{
+    Layout = null;
+    UserInfoDataObject userInfo = ViewData["UserInfo"] as UserInfoDataObject;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserCenter</title>
+    <link href="~/Assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Assets/css/pagination.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Assets/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="~/Assets/js/function.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".msgtable tr:nth-child(odd)").addClass("tr_bg"); //隔行变色
+            $(".msgtable tr").hover(
+                function () {
+                    $(this).addClass("tr_hover_col");
+                },
+                function () {
+                    $(this).removeClass("tr_hover_col");
+                }
+            );
+        });
+        function checkPassword() {
+            var pass = $("#password").val().trim();
+            var rePass = $("#rePassword").val().trim();
+            if (pass.length <= 0) {
+                return false;
+            }
+            if (pass != rePass)
+            {
+                alert("新密码与确认密码不一致!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form action="ChangePassword" method="post" onsubmit="return checkPassword()" target="_top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+            <tr>
+                <th style="width:100px;">工号：</th>
+                <td style="width:300px;">@userInfo.WorkNo</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>姓名：</th>
+                <td>@userInfo.UserName</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>部门：</th>
+                <td>@userInfo.DepartmentName</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>职称：</th>
+                <td>@userInfo.Professional</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>职务：</th>
+                <td>@userInfo.DutiesName</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>新密码：</th>
+                <td><input type="password" id="password" name="password" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>确认新密码：</th>
+                <td><input type="password" id="rePassword" name="rePassword" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;"><input type="submit" value="确定" class="btn_bg" /></td>
+                <td><input type="hidden" name="id" value="@userInfo.ID" /></td>
+            </tr>
+        </table>
+            </form>
+</div>
+</body>
+</html>

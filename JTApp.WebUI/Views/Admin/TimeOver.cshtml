@@ -1,0 +1,149 @@
+﻿@using JTApp.DataObject;
+@{
+    Layout = null;
+    TimeOverDataObject timeOver = ViewData["TimeOver"] as TimeOverDataObject;
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TimeOver</title>
+    <link href="~/Assets/css/pagination.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Assets/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="~/Assets/My97DatePicker/WdatePicker.js"></script>
+    <style type="text/css">
+        .tab {
+            margin: 0 auto;
+        }
+
+            .tab tr {
+                line-height: 25px;
+            }
+
+                .tab tr:hover {
+                    background-color: #ecebeb;
+                }
+
+            .tab td {
+                font-size: 13px;
+                padding: 0px 5px;
+            }
+
+        .sub {
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            width: 82px;
+            height: 35px;
+            line-height: 38px;
+            border-radius: 3px;
+            background: url(../Assets/images/sub_bg.gif) no-repeat;
+            cursor: pointer;
+            padding-left: 16px;
+            top: 0px;
+            margin-right: 0px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .score {
+            width: 30px;
+            height: 20px;
+            border-radius: 2px;
+            background-color: #FFF;
+            border: 1px #CCCCCC solid;
+        }
+
+        .btn {
+            display: block;
+            width: auto;
+            height: 30px;
+            background: url(../Assets/images/btn_bg_03.png) repeat-x;
+            border: 1px #d0d6f8 solid;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #666;
+            padding: 0 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $('#Button1').click(function () {
+                if ($('#rb1').attr("checked") == false && $('#rb2').attr("checked") == false && $('#rb3').attr("checked") == false) {
+                    alert("请选择总体评价！");
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="SaveTimeOver" method="post">
+        <div>
+            <table width="100%" border="1px" bordercolor="#FFFFFF" cellpadding="0" cellspacing="0"
+                   class="tab">
+
+                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                    <th width="100">
+                        年度：
+                    </th>
+                    <th width="100">
+                        <select name="Year">
+                            @{ 
+                                int year = DateTime.Now.Year;
+                            }
+                            @for (int i = year - 4; i <= year + 4; i++)
+                            {
+                                if (timeOver.Year == i)
+                                {
+                                    <option value="@i" selected="selected">@i</option>
+                                }
+                                else {
+                                    <option value="@i">@i</option>
+                                }
+                            }
+                        </select>
+                    </th>
+                    <th width="200">
+                        测评结束时间：
+                    </th>
+                    <th width="100">
+                        <input type="text" name="Date" ID="txt_sj" CssClass="input w50 required" onClick="WdatePicker()" value="@timeOver.Date" />
+                    </th>
+                    <th width="100">
+                        阶段：
+                    </th>
+                    <th width="100">
+                        <select name="Hour" ID="ddl_jd" CssClass="input w50 required">
+                            @for (int i = 0; i < 24; i++)
+                            {
+                                if (timeOver.Hour == i)
+                                {
+                                <option value="@i" selected="selected">@string.Format("{0:D2}点", i)</option>
+                                }
+                                else
+                                {
+                                    <option value="@i">@string.Format("{0:D2}点", i)</option>
+                                }
+                            }
+                        </select>
+                    </th>
+                    <th></th>
+                </tr>
+                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px" style="text-align: center">
+                    <td colspan="6">
+                        <input type="submit" ID="Button1" value="提交" class="sub"  />
+                    </td>
+                    <td><input type="hidden" name="ID" value="@timeOver.ID" /></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

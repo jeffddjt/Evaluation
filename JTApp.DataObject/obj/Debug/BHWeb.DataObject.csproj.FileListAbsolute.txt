@@ -1,0 +1,14 @@
+D:\项目文件\VS_Projects\建材学院民主测评系统\BHWeb.DataObject\bin\Debug\BHWeb.DataObject.dll
+D:\项目文件\VS_Projects\建材学院民主测评系统\BHWeb.DataObject\bin\Debug\BHWeb.DataObject.pdb
+D:\项目文件\VS_Projects\建材学院民主测评系统\BHWeb.DataObject\obj\Debug\BHWeb.DataObject.dll
+D:\项目文件\VS_Projects\建材学院民主测评系统\BHWeb.DataObject\obj\Debug\BHWeb.DataObject.pdb
+D:\建材学院民主测评系统\建材学院民主测评系统源码\BHWeb.DataObject\bin\Debug\BHWeb.DataObject.dll
+D:\建材学院民主测评系统\建材学院民主测评系统源码\BHWeb.DataObject\bin\Debug\BHWeb.DataObject.pdb
+D:\建材学院民主测评系统\建材学院民主测评系统源码\BHWeb.DataObject\obj\Debug\BHWeb.DataObject.dll
+D:\建材学院民主测评系统\建材学院民主测评系统源码\BHWeb.DataObject\obj\Debug\BHWeb.DataObject.pdb
+D:\项目文件\VS_Projects\建材学院民主测评系统\BHWeb.DataObject\obj\Debug\BHWeb.DataObject.csprojResolveAssemblyReference.cache
+D:\Projects\建材学院民主测评系统\BHWeb.DataObject\bin\Debug\BHWeb.DataObject.dll
+D:\Projects\建材学院民主测评系统\BHWeb.DataObject\bin\Debug\BHWeb.DataObject.pdb
+D:\Projects\建材学院民主测评系统\BHWeb.DataObject\obj\Debug\BHWeb.DataObject.dll
+D:\Projects\建材学院民主测评系统\BHWeb.DataObject\obj\Debug\BHWeb.DataObject.pdb
+D:\Projects\建材学院民主测评系统\BHWeb.DataObject\obj\Debug\BHWeb.DataObject.csprojResolveAssemblyReference.cache

@@ -1,0 +1,121 @@
+﻿@using BHWeb.DataObject;
+@{
+    Layout = null;
+    UserRoleDataObject userRole = ViewData["UserRole"] as UserRoleDataObject;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditRole</title>
+    <link href="~/Assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Assets/css/pagination.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Assets/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="~/Assets/js/function.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".msgtable tr:nth-child(odd)").addClass("tr_bg"); //隔行变色
+            $(".msgtable tr").hover(
+                function () {
+                    $(this).addClass("tr_hover_col");
+                },
+                function () {
+                    $(this).removeClass("tr_hover_col");
+                }
+            );
+        });
+        function addRights() {
+            location.href="AddRights?id=@userRole.ID";
+        }
+        function addUser(){
+            location.href="AddUser?id=@userRole.ID"
+        }
+        function chkRightAll(checkbox) {
+            var checked = $(checkbox).attr("checked");
+            $("#rightForm").find(":checkbox").each(function () {
+                $(this).attr("checked", checked);
+            });
+        }
+        function chkUserAll(checkbox) {
+            var checked = $(checkbox).attr("checked");
+            $("#userForm").find(":checkbox").each(function () {
+                $(this).attr("checked", checked);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div> 
+        <form action="SaveUserRole">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable" style="margin-bottom:20px;">
+            <tr>
+                <th style="width:100px;text-align:right;">角色名称：</th>
+                <td style="width:300px;text-align:left;">
+                    <input type="text" name="Name" value="@userRole.Name" />
+                </td>
+                <td style="width:100px;"></td>
+                <td>
+                    <input name="ID" value="@userRole.ID" type="hidden" />
+                </td>
+             </tr>   
+            <tr>
+                <td colspan="4"><span><input type="submit" value="保存" class="btn_bg" /></span></td>
+            </tr>             
+        </table>
+        </form>
+        <form id="rightForm" action="RemoveRights">
+            <div>权限列表</div>
+            <div>
+                <span><input type="button" value="添加" onclick="addRights()" /></span>
+                <span><input type="submit" value="移除"/></span>
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable" style="margin-bottom:20px;">
+                <tr>
+                    <th style="width:30px;"><input type="checkbox" onclick="chkRightAll(this)" /></th>
+                    <th style="width:100px;">ID</th>
+                    <th style="width:300px;">名称</th>
+                    <th></th>
+                </tr>
+                @foreach (FuncModuleDataObject fun in userRole.FunctionList)
+                {
+                    <tr>
+                        <td style="text-align:center;"><input type="checkbox" name="selected" value="@fun.ID" /></td>
+                        <td style="text-align:center;">@fun.ID</td>
+                        <td style="text-align:center;">@fun.ModuleName</td>
+                        <td><input type="hidden" name="userRoleID" value="@userRole.ID" /></td>
+                    </tr>
+                }
+            </table>
+        </form>
+        <form id="userForm" action="RemoveUser">
+            <div>用户列表</div>
+            <div>
+                <span><input type="button" value="添加" onclick="addUser()" /></span>
+                <span><input type="submit" value="移除"/></span>
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable" style="margin-bottom:20px;">
+                <tr>
+                    <th style="width:30px;"><input type="checkbox" onclick="chkUserAll(this)"/></th>
+                    <th style="width:100px;">工号</th>
+                    <th style="width:200px;">姓名</th>
+                    <th style="width:200px;">部门</th>
+                    <th></th>
+                </tr>
+                @foreach (UserInfoDataObject userInfo in userRole.UserList)
+                {
+                    <tr>
+                        <td style="text-align:center;"><input type="checkbox" name="selected" value="@userInfo.ID" /></td>
+                        <td style="text-align:center;">@userInfo.WorkNo</td>
+                        <td style="text-align:center;">@userInfo.UserName</td>
+                        <td style="text-align:center;">@userInfo.DepartmentName</td>
+                        <td><input type="hidden" name="userRoleID" value="@userRole.ID" /></td>
+                    </tr>
+                }
+            </table>
+        </form>
+</div>
+</body>
+</html>

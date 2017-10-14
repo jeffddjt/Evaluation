@@ -1,0 +1,17 @@
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\JTApp.ServiceContracts.dll
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\JTApp.ServiceContracts.pdb
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\obj\Debug\JTApp.ServiceContracts.dll
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\obj\Debug\JTApp.ServiceContracts.pdb
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\JTApp.DataObject.dll
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\JTApp.Infrastructure.dll
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\Autofac.dll
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\JTApp.DataObject.pdb
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\JTApp.Infrastructure.pdb
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\Autofac.xml
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\obj\Debug\JTApp.ServiceContracts.csprojResolveAssemblyReference.cache
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\NPOI.dll
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\NPOI.OOXML.dll
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\NPOI.OpenXml4Net.dll
+D:\Projects\建材学院民主测评系统\JTApp.ServiceContracts\bin\Debug\NPOI.xml

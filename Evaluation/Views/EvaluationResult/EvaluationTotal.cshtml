@@ -1,0 +1,104 @@
+﻿@using BHWeb.DataObject;
+@using System.Data;
+@{
+    Layout = null;
+    DataTable dataTable = ViewData["DataTable"] as DataTable;
+    int pageSize = int.Parse(ViewData["PageSize"].ToString());
+    int pageIndex = int.Parse(ViewData["PageIndex"].ToString());
+    int pageCount = int.Parse(ViewData["PageCount"].ToString());
+    int recordCount = int.Parse(ViewData["RecordCount"].ToString());
+    int deptID = int.Parse(ViewData["DeptID"].ToString());
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EvaluationTotal</title>
+    <link href="~/Assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Assets/css/pagination.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Assets/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="~/Assets/js/function.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".msgtable tr:nth-child(odd)").addClass("tr_bg"); //隔行变色
+            $(".msgtable tr").hover(
+                function () {
+                    $(this).addClass("tr_hover_col");
+                },
+                function () {
+                    $(this).removeClass("tr_hover_col");
+                }
+            );
+        });
+        function btn_Dow_Click() {
+            location.href = 'Download_@ViewContext.RouteData.Values["action"]?deptID=@deptID';
+        }
+    </script>
+</head>
+<body>
+    <div> 
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+            <tr>
+                <td>
+                    <input type="button"  class="btn_bg" value="下载" OnClick="btn_Dow_Click()" />
+                </td>
+            </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+            <tr>
+                @foreach (DataColumn col in dataTable.Columns)
+                {
+                    <th>@col.ColumnName</th>
+                }
+            </tr>
+            @foreach (DataRow row in dataTable.Rows)
+            {
+                <tr>
+                    @for (int i = 0; i < dataTable.Columns.Count; i++)
+                    {
+                      <td style="text-align:center;">
+                          @{
+                              double x=0;
+                              if (double.TryParse(row[i].ToString(), out x)&&i>0)
+                              {
+                                  Write(x.ToString("0.00"));
+                              }
+                              else
+                              {
+                                  Write(row[i]);
+                              }
+                          }
+                      </td>
+                    }
+                </tr>
+            }
+        </table>
+        <form>
+            <span>第</span>
+            <span>@pageIndex</span>
+            <span>页/共</span>
+            <span>@pageCount</span>
+            <span>页</span>
+            <span>共</span>
+            <span>@recordCount</span>
+            <span>条记录</span>
+            <span>每页</span>
+            <input type="text" name="pageSize" style="width:30px;text-align:center;" value="@pageSize" />
+            <span>行</span>
+            <span><a href="@ViewContext.RouteData.Values["action"]?deptID=@deptID&pageSize=@pageSize&pageIndex=1"><img src="~/Assets/images/first.gif" /></a></span>
+            <span><a href="@ViewContext.RouteData.Values["action"]?deptID=@deptID&pageSize=@pageSize&pageIndex=@(pageIndex-1)"><img src="~/Assets/images/prev.gif" /></a></span>
+            <span><input type="text" name="pageIndex" style="width:30px;text-align:center" value="@pageIndex" /></span>
+            <span>
+                <input type="submit" value="GO" />
+                <input type="hidden" name="deptID" value="@deptID" />
+            </span>
+            <span><a href="@ViewContext.RouteData.Values["action"]?deptID=@deptID&pageSize=@pageSize&pageIndex=@(pageIndex+1)"><img src="~/Assets/images/next.gif" /></a></span>
+            <span><a href="@ViewContext.RouteData.Values["action"]?deptID=@deptID&pageSize=@pageSize&pageIndex=@(pageCount)"><img src="~/Assets/images/last.gif" /></a></span>
+        </form>
+</div>
+</body>
+</html>

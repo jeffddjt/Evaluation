@@ -1,0 +1,60 @@
+﻿@using JTApp.DataObject;
+@{
+    Layout = null;
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Assets/css/bootstrap-treeview.css" rel="stylesheet" />
+    <link href="~/Assets/css/style.css" rel="stylesheet" />
+    <script src="~/Assets/js/jquery-2.1.4.min.js"></script>
+    <script src="~/Assets/js/bootstrap.js"></script>
+    <script src="~/Assets/js/bootstrap-treeview.js"></script>
+    
+    <title>组织机构管理</title>
+    <script type="text/javascript">
+        function getDepartment(id) {
+            $("#frmDepartmentEdit").attr("src", "DepartmentEdit?id=" + id);
+        }
+        function itemOnclick(target) {
+            var nodeid = $(target).attr('data-nodeid');
+            var tree = $('#tree');
+            var node = tree.treeview('getNode', nodeid);
+            getDepartment(node.ID);
+        }
+        function addTopDepartment()
+        {
+            $("#frmDepartmentEdit").attr("src", "DepartmentAdd?id=0");
+        }
+        function init() {
+            $.ajax({
+                type: "post",
+                url: "GetDepartmentTree",
+                dataType: "json",
+                success: function (response) {
+                    $("#tree").treeview({ data: response });
+                }
+            });
+        }
+
+        init();
+    </script>
+</head>
+<body>
+        <div style="height:40px;">
+          <input type="button" value="刷新" style="height:30px;width:100px;margin:5px;" onclick="init()" />
+          <input type="button" value="新增顶级机构" style="height:30px;width:90px;margin:5px;" onclick="addTopDepartment()" />
+        </div>
+        <div style="width:250px;position:absolute;left:5px;top:45px;bottom:5px;box-shadow:0px 0px 10px #c0c0c0;">
+            <div id="tree"></div>
+        </div>
+        <div style="position:absolute;left:255px;top:45px;right:5px;bottom:5px;box-shadow:5px 0px 10px #c0c0c0;">
+            <iframe id="frmDepartmentEdit" frameborder="0" style="width:100%;height:100%;margin:0px;"></iframe>
+        </div>
+</body>
+</html>

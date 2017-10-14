@@ -1,0 +1,279 @@
+﻿@using BHWeb.DataObject;
+@{
+    Layout = null;
+    EvaluationTableDataObject evaluationTable = ViewData["EvaluationTable"] as EvaluationTableDataObject;
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FillEvaluationTable</title>
+    <link href="~/Assets/css/pagination.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Assets/js/jquery-1.3.2.min.js"></script>
+    <style type="text/css">
+        .tab {
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+            .tab tr {
+                line-height: 25px;
+            }
+
+                .tab tr:hover {
+                    background-color: #ecebeb;
+                }
+
+            .tab td {
+                font-size: 13px;
+                padding: 0px 5px;
+            }
+
+        .sub {
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            width: 82px;
+            height: 35px;
+            line-height: 38px;
+            border-radius: 3px;
+            background: url(../Assets/images/sub_bg.gif) no-repeat;
+            cursor: pointer;
+            padding-left: 32px;
+            top: 0px;
+            margin-right: 0px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .score {
+            width: 30px;
+            height: 20px;
+            border-radius: 2px;
+            background-color: #FFF;
+            border: 1px #CCCCCC solid;
+        }
+
+        .dialog {
+            width: 640px;
+            height: 420px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -320px;
+            margin-top: -210px;
+            box-shadow: 0px 0px 20px #000;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+            .dialog .dialog-title {
+                background: #cae2f0;
+                width: 630px;
+                height: 40px;
+                line-height: 40px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                font-family: "Microsoft YaHei";
+                font-size: 14px;
+                font-weight: bold;
+                padding-left: 10px;
+                letter-spacing: 2px;
+            }
+
+            .dialog .content {
+                font-family: "Microsoft YaHei";
+                font-size: 12px;
+            }
+
+                .dialog .content td {
+                    padding: 5px;
+                }
+
+        .dialog-btn {
+            text-align: center;
+            border: 1px solid red;
+            height: 100%;
+            width: 100%;
+        }
+
+            .dialog-btn li {
+                list-style-type: none;
+                float: left;
+                margin: 5px;
+            }
+
+        .btn-cancel {
+            background: url(../Assets/images/close.png) no-repeat;
+            width: 25px;
+            height: 25px;
+            float: right;
+            margin-right: 7px;
+            margin-top: 7px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        function dataChange(obj,data) {
+            var value=$(obj).val();
+            if(isNaN(value)){
+                alert("输入必须是数值!");
+                $(obj).focus();
+                $(obj).val(0);
+                sumScore();
+                return;
+            }
+            if(value>data||value<0)
+            {
+                alert("分数只能是不大于"+data+"的非负值！");
+                $(obj).focus();
+                $(obj).val(value>data?data:0);
+                sumScore();
+                return;
+            }
+
+            if(value.split(".").length==2)
+            {
+                if(value.split(".")[1].length>1){
+                    $(obj).val(value.split(".")[0]+"."+value.split(".")[1].substr(0,1));
+                }
+            }
+            sumScore();
+        }
+        function sumScore(){
+            var sum = 0;
+            $("input:text").each(function () {
+                sum += parseFloat($(this).val());                
+            });
+            $("#total").text(sum);   
+            return sum;
+        }
+        function checkData() {
+            var sum = sumScore();                
+            if (sum > 100||sum<0) {
+                alert("总分必须介于0~100之间！");
+                return false;
+            }
+            return true;
+        }
+        function submit() {
+            $("#frmEvaluation").submit();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form id="frmEvaluation" style="margin-bottom:0px;" action="SaveEvaluationTable" method="get" onsubmit="return checkData()">
+            <table width="100%" border="1px" bordercolor="#FFFFFF" cellpadding="0" cellspacing="0"
+                   class="tab">
+                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                    <th width="250">
+                        一级指标
+                    </th>
+                    <th width="100">
+                        得分
+                    </th>
+                    <th width="200">
+                        二级指标
+                    </th>
+                    <th width="50">
+                        分数
+                    </th>
+                    <th>
+                        含义
+                    </th>
+                    <th width="150"></th>
+                </tr>
+                @{
+                    List<EvaluationTableDetailDataObject> detailList = evaluationTable.EvaluationTableDetail.Where(p => p.ReviewParentID == 0).OrderBy(p=>p.Sort).ToList();
+                }
+                @foreach (EvaluationTableDetailDataObject detail in detailList)
+                {
+                    List<EvaluationTableDetailDataObject> children = evaluationTable.EvaluationTableDetail.Where(p => p.ReviewParentID == detail.ReviewID).OrderBy(p=>p.Sort).ToList();
+                    if (children == null || children.Count <= 0)
+                    {
+                        <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                            <td>
+                                <span style="float:left;">@detail.ReviewName</span>
+                            </td>
+                            <td style="text-align: center;">
+                                <input type="text" name="Score_@detail.ID" value="@detail.Score" @(evaluationTable.Submit?"readonly='readonly'":"")   style="width:40px;text-align:center;" onblur="dataChange(this,@detail.ReviewScore)" />
+                                (@detail.ReviewScore)
+                            </td>
+                            <td></td>
+                            <td style="text-align:center;">@detail.ReviewScore</td>
+                            <td>
+                                @detail.ReviewContent
+                            </td>
+                            <td style="text-align:center;"></td>
+                        </tr>
+                    }
+                    else
+                    {  
+                        <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                            <td rowspan="@children.Count">
+                                <span style="float:left;">@detail.ReviewName</span>
+                            </td>
+                            <td rowspan="@children.Count" style="text-align: center;">
+                                <input type="text" name="Score_@detail.ID" value="@detail.Score"  @(evaluationTable.Submit?"readonly='readonly'":"")  style="width:40px;text-align:center;" onblur="dataChange(this,@children.Sum(p => p.ReviewScore))" />
+                                (@children.Sum(p => p.ReviewScore))
+                            </td>
+                            <td>
+                                @children[0].ReviewName
+
+                            </td>
+                            <td style="text-align:center;">
+                                @children[0].ReviewScore
+                            </td>
+
+                            <td>
+                                @children[0].ReviewContent
+                            </td>
+                            <td style="text-align:center;"></td>
+                        </tr>
+                        for (int i = 1; i < children.Count; i++)
+                        {
+                            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                                <td>
+                                    @children[i].ReviewName
+                                </td>
+                                <td style="text-align:center;">
+                                    @children[i].ReviewScore
+                                </td>
+                                <td>
+                                    @children[i].ReviewContent
+                                </td>
+                                <td style="text-align:center;"></td>
+                            </tr>
+                        }
+                    }
+                }
+                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                    <td style="text-align:center;">
+                        总分
+                    </td>
+                    <td style="text-align:center;" id="total">@evaluationTable.EvaluationTableDetail.Where(p => p.ReviewParentID == 0).Sum(p => p.Score)</td>
+                    <td style="text-align:center;"></td>
+                    <td style="text-align:center;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                    <td style="text-align:center;">
+                        <input type="button" value="提交" class="btn"  @(evaluationTable.Submit? "disabled" : "") onclick="submit()"  />
+                        <input type="hidden" name="id" value="@evaluationTable.ID" />
+                    </td>
+                    <td></td>
+                    <td style="text-align:center;"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

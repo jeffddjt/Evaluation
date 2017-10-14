@@ -1,0 +1,67 @@
+﻿@using BHWeb.DataObject;
+@{
+
+    Layout = null;
+    string Msg = ViewData["Msg"] as string;
+    ArticleDataObject article = ViewData["Article"] as ArticleDataObject;
+    
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>登录页面</title>
+    <script type="text/javascript" src="~/Assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/Assets/css/add.css" type="text/css" media="screen" />
+</head>
+<body>
+       <img src="~/Assets/images/bg.jpg" width="100%" height="100%" style="z-index: -100; position: absolute;
+            left: 0; top: 0">
+        <div class="rgb_bg">
+            <div class="div_from_aoto">
+                <h3 class="login_title">
+                    <img src="~/Assets/images/login_title_03.png" />
+                </h3>
+                <div class="left_main">
+                    <h3 class="left_title">
+                        @article.Title
+                    </h3>
+                    <p>
+                        @article.Text
+                    </p>
+                </div>
+                <img class="login_border" src="~/Assets/images/login_border_03.png" />
+                <div class="f_dv">
+                    <form id="form1" method="post" action="~/Home/CheckLogin">
+                        <div class="control-group">
+                            <label class="laber_from">
+                                用户名：
+                            </label>
+                            <div class="controls">
+                                <input type="text" class="input_from1" name="workNo" placeholder="请输入登录帐号"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="laber_from">
+                                密&nbsp;&nbsp;&nbsp;码：
+                            </label>
+                            <div class="controls">
+                                <input name="password" type="password" class="input_from2" placeholder="请输入登录密码"/>
+                            </div>
+                        </div>
+                        <span class="hid">                            
+                            @Msg
+                        </span>
+                        <div class="control-group">
+                            <label class="laber_from">
+                            </label>
+                            <div class="controls">
+                                <input type="submit" class="login_btn" value=""/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

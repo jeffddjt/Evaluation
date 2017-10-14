@@ -1,0 +1,8 @@
+D:\Projects\建材学院民主测评系统\JTApp.Domain\bin\Debug\JTApp.Domain.dll
+D:\Projects\建材学院民主测评系统\JTApp.Domain\bin\Debug\JTApp.Domain.pdb
+D:\Projects\建材学院民主测评系统\JTApp.Domain\obj\Debug\JTApp.Domain.dll
+D:\Projects\建材学院民主测评系统\JTApp.Domain\obj\Debug\JTApp.Domain.pdb
+D:\Projects\建材学院民主测评系统\Evaluation\bin\JTApp.Domain.dll
+D:\Projects\建材学院民主测评系统\Evaluation\bin\JTApp.Domain.pdb
+D:\Projects\建材学院民主测评系统\JTApp.WebUI\bin\JTApp.Domain.dll
+D:\Projects\建材学院民主测评系统\JTApp.WebUI\bin\JTApp.Domain.pdb
