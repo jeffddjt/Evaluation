@@ -73,7 +73,10 @@ namespace JTApp.WebUI.Controllers
         }
         public ActionResult SaveTimeOver(TimeOverDataObject timeOver)
         {
-            this.timeOverService.Update(timeOver);
+            if (this.timeOverService.GetFirst() != null)
+                this.timeOverService.Update(timeOver);
+            else
+                this.timeOverService.Add(timeOver);
             return RedirectToAction("TimeOver", "Admin");
         }
         public ActionResult UserCenter()
