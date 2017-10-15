@@ -1,4 +1,4 @@
-﻿@using BHWeb.DataObject;
+﻿@using JTApp.DataObject;
 @{
     Layout = null;
     BeMeasuredDataObject beMeasured = ViewData["BeMeasured"] as BeMeasuredDataObject;
@@ -42,7 +42,12 @@
             .tab .td_content {
                 text-align: left;
             }
-
+        table{
+            border-collapse:collapse;
+        }
+        th,td{
+            border:1px solid #000;
+        }
         .sub {
             border-style: none;
             border-color: inherit;
@@ -152,16 +157,12 @@
             <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                 <td class="td_title">工号：</td>
                 <td class="td_content">@beMeasured.UserInfo.WorkNo</td>
-            </tr>
-            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                 <td class="td_title">用户名：</td>
                 <td class="td_content">@beMeasured.UserInfo.UserName</td>
             </tr>
             <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                 <td class="td_title">部门</td>
                 <td class="td_content">@beMeasured.UserInfo.DepartmentName</td>
-            </tr>
-            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                 <td class="td_title">职称</td>
                 <td class="td_content">@beMeasured.UserInfo.Professional</td>
             </tr>
@@ -169,8 +170,6 @@
             <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                 <td class="td_title">职务</td>
                 <td class="td_content">@beMeasured.UserInfo.DutiesName</td>
-            </tr>
-            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                 <td class="td_title">专业带头人/骨干</td>
                 <td class="td_content">@(beMeasured.UserInfo.MajorLeader ? "是" : "否")</td>
             </tr>
@@ -181,6 +180,7 @@
             <span><input type="button" value="移除" onclick="removeUserInfo()"/></span>
         </div>
         <form id="frmMeasured">
+            <input type="hidden" name="beMeasuredID" value="@beMeasured.ID" />
             <table width="100%" border="1px" bordercolor="#FFFFFF" cellpadding="0" cellspacing="0" class="tab">
                 <thead>
                     <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px" ;>
@@ -192,7 +192,6 @@
                         <th width="200">职称</th>
                         <th width="200">职务</th>
                         <th width="200">专业带头人/骨干</th>
-                        <th><input type="hidden" name="beMeasuredID" value="@beMeasured.ID"/></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -207,7 +206,6 @@
                             <td>@measured.UserList[0].Professional</td>
                             <td>@measured.UserList[0].DutiesName</td>
                             <td>@(measured.UserList[0].MajorLeader ? "是" : "否")</td>
-                            <td></td>
                         </tr>
                         for (int i = 1; i < measured.UserList.Count; i++)
                         {
@@ -219,7 +217,6 @@
                                 <td>@measured.UserList[i].Professional</td>
                                 <td>@measured.UserList[i].DutiesName</td>
                                 <td>@(measured.UserList[i].MajorLeader ? "是" : "否")</td>
-                                <td></td>
                             </tr>
 
                         }

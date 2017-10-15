@@ -41,7 +41,7 @@ namespace JTApp.Repositories.DAO
                 .Add(new MeasuredTypeConfiguration())
                 .Add(new EvaluationTableTypeConfiguration())
                 .Add(new EvaluationTableDetailTypeConfiguration());
-                
+            Database.SetInitializer(new DatabaseInitialize());
             base.OnModelCreating(modelBuilder);
         }
 

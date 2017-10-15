@@ -1,4 +1,4 @@
-﻿@using BHWeb.DataObject;
+﻿@using JTApp.DataObject;
 @using System.Data;
 @{
     Layout = null;
@@ -43,12 +43,12 @@
     <div> 
         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
             <tr>
-                <td>
+                <td style="border:none;">
                     <input type="button"  class="btn_bg" value="下载" OnClick="btn_Dow_Click()" />
                 </td>
             </tr>
         </table>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+        <table width="100%" cellspacing="0" cellpadding="0" class="msgtable">
             <tr>
                 @foreach (DataColumn col in dataTable.Columns)
                 {

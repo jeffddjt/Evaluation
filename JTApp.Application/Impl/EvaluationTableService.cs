@@ -32,12 +32,13 @@ namespace JTApp.Application.Impl
             List<Review> reviewList = this.Repository.Context.DoGet<Review>(p => p.Year == year).ToList();
             foreach (Review review in reviewList)
             {
-                EvaluationTableDetail detail = new EvaluationTableDetail();
+                EvaluationTableDetail detail = this.Repository.Context.DoCreate<EvaluationTableDetail>();
                 detail.EvaluationTable = entity;
                 detail.Review = review;
                 detailList.Add(detail);
             }
             entity.EvaluationTableDetail = detailList;
+            this.Repository.Add(entity);
             this.Repository.Commit();
             return JTMapper.Map<EvaluationTable, EvaluationTableDataObject>(entity);
         }

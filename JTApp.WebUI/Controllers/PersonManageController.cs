@@ -62,7 +62,10 @@ namespace JTApp.WebUI.Controllers
         }
         public ActionResult SaveUserInfo(UserInfoDataObject userInfo)
         {
-            userInfo = this.userInfoService.Update(userInfo);
+            if (userInfo.ID != 0)
+                userInfo = this.userInfoService.Update(userInfo);
+            else
+                userInfo = this.userInfoService.Add(userInfo);
             return RedirectToAction("PartakePerson");
         }
         public ActionResult ImportUserInfo(HttpPostedFileBase file)

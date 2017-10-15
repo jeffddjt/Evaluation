@@ -1,4 +1,4 @@
-﻿@using BHWeb.DataObject;
+﻿@using JTApp.DataObject;
 @{
     Layout = null;
     UserInfoDataObject userInfo = Model as UserInfoDataObject;
@@ -42,6 +42,12 @@
             .tab .td_content {
                 text-align:left;
             }
+        table{
+            border-collapse:collapse;
+        }
+        th,td{
+            border:1px solid #000;
+        }
         .sub {
             border-style: none;
             border-color: inherit;
@@ -153,8 +159,6 @@
                 <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                     <td class="td_title">工号：</td>
                     <td class="td_content"><input type="text" name="WorkNo" value="@userInfo.WorkNo" /></td>
-                </tr>
-                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                     <td class="td_title">用户名：</td>
                     <td class="td_content"><input type="text" name="UserName" value="@userInfo.UserName" /></td>
                 </tr>
@@ -175,8 +179,6 @@
                                 }
                             }
                         </select>
-                </tr>
-                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                     <td class="td_title">职称</td>
                     <td class="td_content">
                         <select name="Professional" style="width:173px;">
@@ -221,8 +223,6 @@
                             }
                         </select>
                     </td>
-                </tr>
-                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                     <td class="td_title">专业带头人/骨干</td>
                     <td class="td_content">
                         <input id="MajorLeader" name="MajorLeader" type="checkbox" title="是" @(userInfo.MajorLeader ? "checked='checked'" : "") value="@userInfo.MajorLeader.ToString()" onclick="chkMajorLeader(this)" />
@@ -234,8 +234,6 @@
                     <td class="td_content">
                         <input id="Director" name="Director" type="checkbox" title="是" @(userInfo.Director ? "checked='checked'" : "") value="@userInfo.Director.ToString()" onclick="chkMajorLeader(this)" />
                     </td>
-                </tr>
-                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                     <td class="td_title">辅导员</td>
                     <td class="td_content">
                         <input id="Instructor" name="Instructor" type="checkbox" title="是" @(userInfo.Instructor ? "checked='checked'" : "") value="@userInfo.Instructor.ToString()" onclick="chkMajorLeader(this)" />
@@ -246,9 +244,6 @@
                     <td class="td_content">
                         <input id="Secretary" name="Secretary" type="checkbox" title="是" @(userInfo.Secretary ? "checked='checked'" : "") value="@userInfo.Secretary.ToString()" onclick="chkMajorLeader(this)" />
                     </td>
-                </tr>
-
-                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                     <td class="td_content" colspan="2">
                         <input type="button" value="重置密码" onclick="resetPassword()" />
                     </td>

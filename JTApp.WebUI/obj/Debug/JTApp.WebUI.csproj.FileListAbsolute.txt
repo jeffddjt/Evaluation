@@ -66,3 +66,4 @@ D:\Projects\建材学院民主测评系统\JTApp.WebUI\bin\zh-Hans\System.Web.He
 D:\Projects\建材学院民主测评系统\JTApp.WebUI\bin\zh-Hans\System.Web.Mvc.resources.dll
 D:\Projects\建材学院民主测评系统\JTApp.WebUI\obj\Debug\JTApp.WebUI.dll
 D:\Projects\建材学院民主测评系统\JTApp.WebUI\obj\Debug\JTApp.WebUI.pdb
+D:\Projects\建材学院民主测评系统\JTApp.WebUI\bin\Templete\人员导入模板.xls

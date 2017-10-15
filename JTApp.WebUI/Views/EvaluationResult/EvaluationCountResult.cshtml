@@ -1,4 +1,4 @@
-﻿@using BHWeb.DataObject;
+﻿@using JTApp.DataObject;
 @{
     Layout = null;
     List<BeMeasuredDataObject> beMeasuredList = ViewData["beMeasuredList"] as List<BeMeasuredDataObject>;
@@ -42,7 +42,7 @@
         <form action="Download_@ViewContext.RouteData.Values["action"]" method="post">
         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
             <tr>
-                <td>
+                <td style="border:none;">
                     <input type="submit" value="下载" class="btn_bg" />
                     <input type="hidden" name="deptID" value="@deptID" />
                 </td>

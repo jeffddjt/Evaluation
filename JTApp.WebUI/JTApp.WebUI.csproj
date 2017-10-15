@@ -260,6 +260,9 @@
     <Content Include="Assets\images\fontawesome-webfontf77b.eot" />
     <Content Include="Assets\images\fontawesome-webfontf77b.ttf" />
     <Content Include="Assets\images\fontawesome-webfontf77b.woff" />
+    <Content Include="Templete\人员导入模板.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

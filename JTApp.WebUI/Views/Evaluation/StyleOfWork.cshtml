@@ -1,4 +1,4 @@
-﻿@using BHWeb.DataObject;
+﻿@using JTApp.DataObject;
 @{
     Layout = null;
     StyleOfWorkDataObject styleOfWork = ViewData["StyleOfWork"] as StyleOfWorkDataObject;
@@ -30,6 +30,12 @@
                 font-size: 13px;
                 padding: 0px 5px;
             }
+                table{
+            border-collapse:collapse;
+        }
+        th,td{
+            border:1px solid #000;
+        }
 
         .sub {
             border-style: none;
@@ -108,7 +114,7 @@
                     </td>
                 </tr>
                 <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px" style="text-align: center">
-                    <td colspan="5">
+                    <td colspan="5" style="border:none;">
                         <input type="submit" value="提交" class="sub" @(styleOfWork.Score>0? "disabled" : "") />
                         <input type="hidden" name="id" value="@styleOfWork.ID" />
                     </td>

@@ -232,7 +232,7 @@ namespace JTApp.WebUI.Controllers
                 double sum = 0;
                 foreach (ReviewDataObject review in reviewList)
                 {
-                    var query = bm.EvaluationTableList.GroupBy(p => p.Ratio)
+                    var query = bm.EvaluationTableList.Where(p=>p.Submit).GroupBy(p => p.Ratio)
                         .Select(p => new
                         {
                             Ratio = p.Key,
@@ -277,7 +277,7 @@ namespace JTApp.WebUI.Controllers
                 DataRow row = dt.NewRow();
                 row["工号"] = bm.UserInfo.WorkNo;
                 row["姓名"] = bm.UserInfo.UserName;
-                var query = bm.StyleOfWorkList.GroupBy(p => p.Ratio)
+                var query = bm.StyleOfWorkList.Where(p=>p.Score>0).GroupBy(p => p.Ratio)
                     .Select(p =>
                         new
                         {

@@ -48,7 +48,12 @@
             .tab .td_content {
                 text-align: left;
             }
-
+        table{
+            border-collapse:collapse;
+        }
+        th,td{
+            border:1px solid #000;
+        }
         .sub {
             border-style: none;
             border-color: inherit;
@@ -176,18 +181,18 @@
         <form action="SaveDepartment" method="post">
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
                 <tr>
-                    <td style="width:100px;">
+                    <td style="width:100px;border:none;">
                         名称：
                     </td>
-                    <td>
+                    <td style="border:none;">
                         <input type="text" name="Name" value="@department.Name" style="width:150px;text-align:left;padding:3px;" />
                         <input type="hidden" name="ID" value="@department.ID" />
                         <input type="hidden" name="Children" value="@department.Children"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>上级机构:</td>
-                    <td>
+                    <td style="border:none;">上级机构:</td>
+                    <td style="border:none;">
                         <select name="ParentID">
                             <option value="0" selected="selected">无</option>
                             @foreach (DepartmentDataObject dept in deptList)
@@ -207,7 +212,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="text-align:center;">
+                    <td colspan="2" style="text-align:center;border:none;">
                         <input type="button" value="新增下级机构" onclick="addDepartment(@department.ID)" style="width:100px;height:30px;margin:5px;"/>                        
                         <input type="button" value="删除" onclick="delDepartment(@department.ID)" style="width:50px;height:30px;margin:5px;" />
                         <input type="submit" value="保存" style="width:50px;height:30px;margin:5px;" />                        
@@ -220,6 +225,7 @@
             <span><input type="button" value="移除成员" onclick="removeUser()"/></span>
         </div>
         <form id="frmUserList">
+            <input type="hidden" name="deptID" value="@department.ID" />
         <table width="100%" border="1px" bordercolor="#FFFFFF" cellpadding="0" cellspacing="0" class="tab">
             <thead>
                 <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
@@ -231,7 +237,6 @@
                     <th width="200">系部党政办主任</th>
                     <th width="200">辅导员</th>
                     <th width="200">教学系秘</th>
-                    <th><input type="hidden" name="deptID" value="@department.ID" /></th>
                 </tr>
             </thead>
             <tbody>
@@ -246,7 +251,6 @@
                         <td>@(userInfo.Director ? "是" : "否")</td>
                         <td>@(userInfo.Instructor ? "是" : "否")</td>
                         <td>@(userInfo.Secretary ? "是" : "否")</td>
-                        <td></td>
                     </tr>
                 }
             </tbody>

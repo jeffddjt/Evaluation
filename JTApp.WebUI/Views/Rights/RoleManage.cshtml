@@ -1,4 +1,4 @@
-﻿@using BHWeb.DataObject;
+﻿@using JTApp.DataObject;
 @{
     Layout = null;
     List<UserRoleDataObject> userRoleList = ViewData["UserRoleList"] as List<UserRoleDataObject>;
@@ -46,20 +46,18 @@
         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
             <tr>
                 <th style="width:100px;">ID</th>
-                <th style="width:200px;">角色名称</th>
-                <th style="width:200px"></th>
-                <th></th>
+                <th>角色名称</th>
+                <th style="width:150px"></th>
             </tr>
             @foreach (UserRoleDataObject userRole in userRoleList)
             {
                 <tr>
                     <td>@userRole.ID</td>
                     <td>@userRole.Name</td>
-                    <td>
+                    <td style="text-align:center;">
                         <span><input type="button" value="编辑" onclick="editRole('@userRole.ID')" /></span>
                         <span><input type="button" value="删除" onclick="removeRole('@userRole.ID')"/></span>
                     </td>
-                    <td></td>
                 </tr>
             }
         </table>

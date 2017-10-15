@@ -44,7 +44,14 @@ namespace JTApp.WebUI.Controllers
         }
         public ActionResult SaveUserRole(UserRoleDataObject userRole)
         {
-            userRole = this.userRoleService.Update(userRole);
+            if (userRole.ID != 0)
+            {
+                userRole = this.userRoleService.Update(userRole);
+            }
+            else
+            {
+                userRole = this.userRoleService.Add(userRole);
+            }
             ViewData["UserRole"] = userRole;
             return Redirect("EditRole?id="+userRole.ID);
         }

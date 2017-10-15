@@ -240,6 +240,10 @@
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JTApp.DataObject\JTApp.DataObject.csproj">
+      <Project>{E3E216A5-F278-4E08-996F-5E6F298734AE}</Project>
+      <Name>JTApp.DataObject</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JTApp.Infrastructure\JTApp.Infrastructure.csproj">
       <Project>{248417C5-17A6-47D1-9865-04F3534B0040}</Project>
       <Name>JTApp.Infrastructure</Name>

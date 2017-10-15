@@ -1,4 +1,4 @@
-﻿@using BHWeb.DataObject;
+﻿@using JTApp.DataObject;
 @{
     Layout = null;
     List<UserInfoDataObject> userList = ViewData["UserList"] as List<UserInfoDataObject>;
@@ -37,7 +37,12 @@
                 padding: 0px 5px;
                 text-align:center;
             }
-
+        table{
+            border-collapse;
+        }
+        th,td{
+            border:1px solid #000;
+        }
         .sub {
             border-style: none;
             border-color: inherit;
@@ -173,7 +178,6 @@
                     <th width="200">系部党政办主任</th>
                     <th width="200">辅导员</th>
                     <th width="200">教学系秘</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -190,7 +194,6 @@
                         <td>@(userInfo.Director ? "是" : "否")</td>
                         <td>@(userInfo.Instructor ? "是" : "否")</td>
                         <td>@(userInfo.Secretary ? "是" : "否")</td>
-                        <td></td>
                     </tr>
                 }
             </tbody>

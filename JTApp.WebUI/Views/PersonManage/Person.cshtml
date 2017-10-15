@@ -1,4 +1,4 @@
-﻿@using BHWeb.DataObject;
+﻿@using JTApp.DataObject;
 @{
     Layout = null;
     List<BeMeasuredDataObject> beMeasureList = ViewData["BeMeasureList"] as List<BeMeasuredDataObject>;
@@ -37,7 +37,12 @@
                 padding: 0px 5px;
                 text-align:center;
             }
-
+        table{
+            border-collapse:collapse;
+        }
+        th,td{
+            border:1px solid #000;
+        }
         .sub {
             border-style: none;
             border-color: inherit;
@@ -169,7 +174,6 @@
                     <th width="200">系部党政办主任</th>
                     <th width="200">辅导员</th>
                     <th width="200">教学系秘</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -186,7 +190,6 @@
                         <td>@(beMeasure.UserInfo.Director ? "是" : "否")</td>
                         <td>@(beMeasure.UserInfo.Instructor ? "是" : "否")</td>
                         <td>@(beMeasure.UserInfo.Secretary ? "是" : "否")</td>
-                        <td></td>
                     </tr>
                 }
             </tbody>

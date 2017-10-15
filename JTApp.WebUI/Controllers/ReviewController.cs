@@ -34,7 +34,10 @@ namespace JTApp.WebUI.Controllers
         }
         public void SaveReview(ReviewDataObject review)
         {
-            this.reviewService.Update(review);
+            if (review.ID != 0)
+                this.reviewService.Update(review);
+            else
+                this.reviewService.Add(review);
         }
         public void RemoveReview(int id)
         {

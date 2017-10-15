@@ -9,9 +9,9 @@ namespace JTApp.ServiceContracts
 {
     public interface IUserRoleService : IServiceBase<UserRoleDataObject>
     {
-        void AddRights(int value, int[] selected);
-        void RemoveRights(int value, int[] selected);
-        void addUsers(int value, int[] selected);
-        void RemoveUsers(int value, int[] selected);
+        void AddRights(int userRoleID, int[] selected);
+        void RemoveRights(int userRoleID, int[] selected);
+        void addUsers(int userRoleID, int[] selected);
+        void RemoveUsers(int userRoleID, int[] selected);
     }
 }

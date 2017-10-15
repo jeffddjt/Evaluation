@@ -18,7 +18,10 @@ namespace JTApp.Application.Impl
         public UserInfoService(IUserInfoRepository userinfoRepository):base(userinfoRepository)
         {
         }
-
+        public override IList<UserInfoDataObject> GetList(int[] ids)
+        {
+            return JTMapper.Map<IList<UserInfo>, IList<UserInfoDataObject>>(this.Repository.Get(p => !ids.Contains(p.ID)).ToList());
+        }
         public void ChangePassword(int id, string password)
         {
             UserInfo userInfo = this.Repository.FindByID(id);

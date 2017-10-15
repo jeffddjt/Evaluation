@@ -26,7 +26,10 @@ namespace JTApp.WebUI.Controllers
         }
         public void SaveDuties(DutiesDataObject duty)
         {
-            this.dutiesService.Update(duty);
+            if (duty.ID != 0)
+                this.dutiesService.Update(duty);
+            else
+                this.dutiesService.Add(duty);
         }
         public void DeleteDuties(DutiesDataObject duty)
         {

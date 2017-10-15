@@ -48,13 +48,16 @@
     <Compile Include="Impl\ArticleService.cs" />
     <Compile Include="Impl\BeMeasuredService.cs" />
     <Compile Include="Impl\DepartmentService.cs" />
+    <Compile Include="Impl\DutiesService.cs" />
     <Compile Include="Impl\EvaluationTableDetailService.cs" />
     <Compile Include="Impl\EvaluationTableService.cs" />
+    <Compile Include="Impl\FunctionService.cs" />
     <Compile Include="Impl\ReviewService.cs" />
     <Compile Include="Impl\ServiceBase.cs" />
     <Compile Include="Impl\StyleOfWorkService.cs" />
     <Compile Include="Impl\TimeOverService.cs" />
     <Compile Include="Impl\UserInfoService.cs" />
+    <Compile Include="Impl\UserRoleService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

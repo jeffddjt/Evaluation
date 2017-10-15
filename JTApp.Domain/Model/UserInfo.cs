@@ -13,7 +13,9 @@ namespace JTApp.Domain.Model
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Professional { get; set; }
+        public virtual int? DepartmentID { get; set; }
         public virtual Department Department { get; set; }
+        public virtual int? DutiesID { get; set; }
         public virtual Duties Duties { get; set; }
         public bool MajorLeader { get; set; }
         public bool Director { get; set; }

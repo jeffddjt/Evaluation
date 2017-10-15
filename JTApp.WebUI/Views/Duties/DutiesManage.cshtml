@@ -1,4 +1,4 @@
-﻿@using BHWeb.DataObject;
+﻿@using JTApp.DataObject;
 @{
     Layout = null;
     List<DutiesDataObject> dutiesList = ViewData["DutiesList"] as List<DutiesDataObject>;
@@ -42,7 +42,12 @@
             .tab .td_content {
                 text-align: left;
             }
-
+        table{
+            border-collapse:collapse;
+        }
+        th,td{
+            border:1px solid #000;
+        }
         .sub {
             border-style: none;
             border-color: inherit;

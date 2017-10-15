@@ -69,13 +69,13 @@ namespace JTApp.Application.Impl
 
         public IList<BeMeasuredDataObject> GetTotal(int[] ids, int year, JTPager pager)
         {
-            pager.Total = this.Repository.GetCount(p => ids.Contains(p.UserInfo.Department.ID) && p.EvaluationTableList.Where(k => k.Year == year).Count() > 0);
+            pager.Total = this.Repository.GetCount(p => ids.Contains(p.UserInfo.Department.ID) && p.EvaluationTableList.Where(k => k.Year == year&&k.Submit).Count() > 0);
             pager.Count = (pager.Total + pager.Size - 1) / pager.Size;
             if (pager.Index > pager.Count)
                 pager.Index = pager.Count;
             if (pager.Index < 1)
                 pager.Index = 1;
-            IList<BeMeasured> beMeasuredList = this.Repository.Get(p => ids.Contains(p.UserInfo.Department.ID) && p.EvaluationTableList.Where(k => k.Year == year).Count() > 0, pager.Index, pager.Size).ToList();
+            IList<BeMeasured> beMeasuredList = this.Repository.Get(p => ids.Contains(p.UserInfo.Department.ID) && p.EvaluationTableList.Where(k => k.Year == year && k.Submit).Count() > 0, pager.Index, pager.Size).ToList();
             return JTMapper.Map<IList<BeMeasured>, IList<BeMeasuredDataObject>>(beMeasuredList);
         }
 

@@ -13,6 +13,7 @@ namespace JTApp.Domain.Model
         public double Score { get; set; }
         public string Content { get; set; }
         public int Sort { get; set; }
+        public virtual int? ParentID { get; set; }
         public virtual Review Parent { get; set; }
         public virtual List<Review> Children { get; set; }
     }
