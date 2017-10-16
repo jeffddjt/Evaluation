@@ -192,6 +192,8 @@
                         <th width="200">职称</th>
                         <th width="200">职务</th>
                         <th width="200">专业带头人/骨干</th>
+                        <th width="200">学工办主任</th>
+                        <th width="200">民主党派</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -206,6 +208,8 @@
                             <td>@measured.UserList[0].Professional</td>
                             <td>@measured.UserList[0].DutiesName</td>
                             <td>@(measured.UserList[0].MajorLeader ? "是" : "否")</td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         for (int i = 1; i < measured.UserList.Count; i++)
                         {
@@ -217,6 +221,8 @@
                                 <td>@measured.UserList[i].Professional</td>
                                 <td>@measured.UserList[i].DutiesName</td>
                                 <td>@(measured.UserList[i].MajorLeader ? "是" : "否")</td>
+                                <td></td>
+                                <td></td>
                             </tr>
 
                         }
