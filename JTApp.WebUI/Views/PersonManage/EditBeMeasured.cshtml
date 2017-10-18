@@ -173,6 +173,24 @@
                 <td class="td_title">专业带头人/骨干</td>
                 <td class="td_content">@(beMeasured.UserInfo.MajorLeader ? "是" : "否")</td>
             </tr>
+            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                <td class="td_title">系部党政办主任</td>
+                <td class="td_content">@beMeasured.UserInfo.Director</td>
+                <td class="td_title">辅导员</td>
+                <td class="td_content">@beMeasured.UserInfo.Instructor</td>
+            </tr>
+            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                <td class="td_title">教学系秘</td>
+                <td class="td_content">@beMeasured.UserInfo.Secretary</td>
+                <td class="td_title">学工办主任</td>
+                <td class="td_content">@beMeasured.UserInfo.General</td>
+            </tr>
+            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                <td class="td_title">民主党派</td>
+                <td class="td_content">@beMeasured.UserInfo.Democratic</td>
+                <td class="td_title"></td>
+                <td class="td_content"></td>
+            </tr>
         </table>
         <div style="height:30px;font-weight:bold;line-height:30px;"><span>参与测评人员</span></div>
         <div style="height:30px;line-height:30px;">
@@ -192,6 +210,9 @@
                         <th width="200">职称</th>
                         <th width="200">职务</th>
                         <th width="200">专业带头人/骨干</th>
+                        <th width="200">系部党政办主任</th>
+                        <th width="200">辅导员</th>
+                        <th width="200">教学系秘</th>
                         <th width="200">学工办主任</th>
                         <th width="200">民主党派</th>
                     </tr>
@@ -208,8 +229,11 @@
                             <td>@measured.UserList[0].Professional</td>
                             <td>@measured.UserList[0].DutiesName</td>
                             <td>@(measured.UserList[0].MajorLeader ? "是" : "否")</td>
-                            <td></td>
-                            <td></td>
+                            <td>@(measured.UserList[0].Director ? "是" : "否")</td>
+                            <td>@(measured.UserList[0].Instructor ? "是" : "否")</td>
+                            <td>@(measured.UserList[0].Secretary ? "是" : "否")</td>
+                            <td>@(measured.UserList[0].General?"是":"否")</td>
+                            <td>@(measured.UserList[0].Democratic?"是":"否")</td>
                         </tr>
                         for (int i = 1; i < measured.UserList.Count; i++)
                         {
@@ -221,8 +245,12 @@
                                 <td>@measured.UserList[i].Professional</td>
                                 <td>@measured.UserList[i].DutiesName</td>
                                 <td>@(measured.UserList[i].MajorLeader ? "是" : "否")</td>
-                                <td></td>
-                                <td></td>
+                                <td>@(measured.UserList[i].Director ? "是" : "否")</td>
+                                <td>@(measured.UserList[i].Instructor ? "是" : "否")</td>
+                                <td>@(measured.UserList[i].Secretary ? "是" : "否")</td>
+                                <td>@(measured.UserList[i].General ? "是" : "否")</td>
+                                <td>@(measured.UserList[i].Democratic ? "是" : "否")</td>
+
                             </tr>
 
                         }

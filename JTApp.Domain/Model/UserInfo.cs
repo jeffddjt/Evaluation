@@ -21,6 +21,11 @@ namespace JTApp.Domain.Model
         public bool Director { get; set; }
         public bool Instructor { get; set; }
         public bool Secretary { get; set; }
+        //学工办主任
+        public bool General { get; set; }
+        //民主党派
+        public bool Democratic { get; set; }
+
         public virtual List<Measured> MeasuredList { get; set; }
         public virtual List<UserRole> UserRole { get; set; }
         public virtual List<EvaluationTable> EvaluationTable { get; set; }

@@ -244,6 +244,16 @@
                     <td class="td_content">
                         <input id="Secretary" name="Secretary" type="checkbox" title="是" @(userInfo.Secretary ? "checked='checked'" : "") value="@userInfo.Secretary.ToString()" onclick="chkMajorLeader(this)" />
                     </td>
+                    <td class="td_title">学工办主任</td>
+                    <td class="td_content">
+                        <input id="General" name="General" type="checkbox" title="是" @(userInfo.General ? "checked='checked'":"") value="@userInfo.General.ToString()" onclick="chkMajorLeader(this)" />
+                    </td>
+                </tr>
+                <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                    <td class="td_title">民主党派</td>
+                    <td class="td_content">
+                        <input id="Democratic" name="Democratic" type="checkbox" title="是" @(userInfo.Democratic ? "checked='checked'" : "") value="@userInfo.Democratic.ToString()" onclick="chkMajorLeader(this)" />
+                    </td>
                     <td class="td_content" colspan="2">
                         <input type="button" value="重置密码" onclick="resetPassword()" />
                     </td>

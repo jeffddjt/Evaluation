@@ -184,7 +184,7 @@
                     <th width="200">
                         二级指标
                     </th>
-                    <th width="50">
+                    <th width="100">
                         分数
                     </th>
                     <th>
@@ -200,8 +200,8 @@
                     if (children == null || children.Count <= 0)
                     {
                         <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
-                            <td>
-                                <span style="float:left;">@detail.ReviewName</span>
+                            <td style="text-align:center;">
+                                @detail.ReviewName
                             </td>
                             <td style="text-align: center;">
                                 <input type="text" name="Score_@detail.ID" value="@detail.Score" @(evaluationTable.Submit?"readonly='readonly'":"")   style="width:40px;text-align:center;" onblur="dataChange(this,@detail.ReviewScore)" />
@@ -217,8 +217,8 @@
                     else
                     {  
                         <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
-                            <td rowspan="@children.Count">
-                                <span style="float:left;">@detail.ReviewName</span>
+                            <td style="text-align:center;" rowspan="@children.Count">
+                                @detail.ReviewName
                             </td>
                             <td rowspan="@children.Count" style="text-align: center;">
                                 <input type="text" name="Score_@detail.ID" value="@detail.Score"  @(evaluationTable.Submit?"readonly='readonly'":"")  style="width:40px;text-align:center;" onblur="dataChange(this,@children.Sum(p => p.ReviewScore))" />
@@ -229,7 +229,8 @@
 
                             </td>
                             <td style="text-align:center;">
-                                @children[0].ReviewScore
+                                <input type="text" name="Score_@children[0].ID" value="@children[0].Score" @(evaluationTable.Submit ? "readonly='readonly'" : "") style="width:40px;text-align:center;" onblur="dataChange(this,@children.Sum(p=>p.ReviewScore))" />
+                                (@children[0].ReviewScore)
                             </td>
 
                             <td>
@@ -243,7 +244,8 @@
                                     @children[i].ReviewName
                                 </td>
                                 <td style="text-align:center;">
-                                    @children[i].ReviewScore
+                                    <input type="text" name="Score_@children[i].ID" value="@children[0].Score" @(evaluationTable.Submit?"readonly='readonly'":"") style="width:40px;text-align:center;" onblur="dataChange(this,@children.Sum(p=>p.ReviewScore))" />
+                                    (@children[i].ReviewScore)
                                 </td>
                                 <td>
                                     @children[i].ReviewContent

@@ -178,6 +178,8 @@
                     <th width="200">系部党政办主任</th>
                     <th width="200">辅导员</th>
                     <th width="200">教学系秘</th>
+                    <th width="200">学工办主任</th>
+                    <th width="200">民主党派</th>
                 </tr>
             </thead>
             <tbody>
@@ -194,6 +196,8 @@
                         <td>@(userInfo.Director ? "是" : "否")</td>
                         <td>@(userInfo.Instructor ? "是" : "否")</td>
                         <td>@(userInfo.Secretary ? "是" : "否")</td>
+                        <td>@(userInfo.General ? "是" : "否")</td>
+                        <td>@(userInfo.Democratic ? "是" : "否")</td>
                     </tr>
                 }
             </tbody>

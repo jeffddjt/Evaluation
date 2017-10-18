@@ -19,6 +19,11 @@ namespace JTApp.DataObject
         public bool Director { get; set; }
         public bool Instructor { get; set; }
         public bool Secretary { get; set; }
+        //学工办主任
+        public bool General { get; set; }
+        //民主党派
+        public bool Democratic { get; set; }
+
         public List<string> FunctionList { get; set; }
         public int Submited { get; set; }
         public int StyleOfWorkSubmit { get; set; }
