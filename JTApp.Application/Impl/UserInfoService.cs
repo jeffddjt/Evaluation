@@ -18,6 +18,30 @@ namespace JTApp.Application.Impl
         public UserInfoService(IUserInfoRepository userinfoRepository):base(userinfoRepository)
         {
         }
+        public override UserInfoDataObject Add(UserInfoDataObject dataObject)
+        {
+            UserInfo user = this.Repository.Create();
+            user = JTMapper.Map(dataObject, user);
+            if (dataObject.DepartmentID == 0)
+                user.DepartmentID = null;
+            if (dataObject.DutiesID == 0)
+                user.DutiesID = null;
+            this.Repository.Add(user);
+            this.Repository.Commit();
+            return JTMapper.Map<UserInfo, UserInfoDataObject>(user);
+        }
+        public override UserInfoDataObject Update(UserInfoDataObject dataObject)
+        {
+            UserInfo user = this.Repository.FindByID(dataObject.ID);
+            user = JTMapper.Map(dataObject, user);
+            if (dataObject.DepartmentID == 0)
+                user.DepartmentID = null;
+            if (dataObject.DutiesID == 0)
+                user.DutiesID = null;
+            this.Repository.Update(user);
+            this.Repository.Commit();
+            return JTMapper.Map<UserInfo, UserInfoDataObject>(user);
+        }
         public override IList<UserInfoDataObject> GetList(int[] ids)
         {
             return JTMapper.Map<IList<UserInfo>, IList<UserInfoDataObject>>(this.Repository.Get(p => !ids.Contains(p.ID)).ToList());
@@ -109,6 +133,7 @@ namespace JTApp.Application.Impl
 
         public List<UserInfoDataObject> GetList(JTPager pager)
         {
+            pager.Total = this.Repository.GetCount();
             pager.Count = (pager.Total + pager.Size - 1) / pager.Size;
             if (pager.Index > pager.Count)
                 pager.Index = pager.Count;

@@ -73,6 +73,15 @@
             border: 1px #CCCCCC solid;
         }
 
+        #mask{
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background:rgba(255,255,255,0.4);
+        }
+
         .dialog {
             width: 640px;
             height: 420px;
@@ -149,6 +158,32 @@
                 }
             });
         }
+        function modifyRatio(beMeasuredID,userID, ratio) {
+            $("#userID").val(userID);
+            $("#beMeasuredID").val(beMeasuredID);
+            $("#ratio").val(ratio);
+            $("#mask").show("fast");
+        }
+        function cancel() {
+            $("#mask").hide("fast");
+        }
+        function saveRatio() {
+            $.ajax({
+                url: "ModifyRatio",
+                type: "post",
+                data: { 
+                    beMeasuredID: $("#beMeasuredID").val(),
+                    userID:$("#userID").val(),
+                    ratio: $("#ratio").val() 
+                },
+                success: function (data) {
+                    alert("修改成功!");
+                    $("#mask").hide("fast");
+                    location.reload();
+                }
+
+            });
+        }
     </script>
 </head>
 <body>
@@ -175,19 +210,19 @@
             </tr>
             <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                 <td class="td_title">系部党政办主任</td>
-                <td class="td_content">@beMeasured.UserInfo.Director</td>
+                <td class="td_content">@(beMeasured.UserInfo.Director ? "是" : "否")</td>
                 <td class="td_title">辅导员</td>
-                <td class="td_content">@beMeasured.UserInfo.Instructor</td>
+                <td class="td_content">@(beMeasured.UserInfo.Instructor ? "是" : "否")</td>
             </tr>
             <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                 <td class="td_title">教学系秘</td>
-                <td class="td_content">@beMeasured.UserInfo.Secretary</td>
+                <td class="td_content">@(beMeasured.UserInfo.Secretary ? "是" : "否")</td>
                 <td class="td_title">学工办主任</td>
-                <td class="td_content">@beMeasured.UserInfo.General</td>
+                <td class="td_content">@(beMeasured.UserInfo.General ? "是" : "否")</td>
             </tr>
             <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
                 <td class="td_title">民主党派</td>
-                <td class="td_content">@beMeasured.UserInfo.Democratic</td>
+                <td class="td_content">@(beMeasured.UserInfo.Democratic ? "是" : "否")</td>
                 <td class="td_title"></td>
                 <td class="td_content"></td>
             </tr>
@@ -215,6 +250,7 @@
                         <th width="200">教学系秘</th>
                         <th width="200">学工办主任</th>
                         <th width="200">民主党派</th>
+                        <th width="200"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -234,7 +270,8 @@
                             <td>@(measured.UserList[0].Secretary ? "是" : "否")</td>
                             <td>@(measured.UserList[0].General?"是":"否")</td>
                             <td>@(measured.UserList[0].Democratic?"是":"否")</td>
-                        </tr>
+                            <td><a href="#" onclick="modifyRatio(@beMeasured.ID,@measured.UserList[0].ID,@measured.Ratio)">修改权重</a></td>                       
+                         </tr>
                         for (int i = 1; i < measured.UserList.Count; i++)
                         {
                             <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
@@ -250,7 +287,7 @@
                                 <td>@(measured.UserList[i].Secretary ? "是" : "否")</td>
                                 <td>@(measured.UserList[i].General ? "是" : "否")</td>
                                 <td>@(measured.UserList[i].Democratic ? "是" : "否")</td>
-
+                                <td><a href="#"  onclick="modifyRatio(@beMeasured.ID,@measured.UserList[i].ID,@measured.Ratio)">修改权重</a></td>
                             </tr>
 
                         }
@@ -258,6 +295,23 @@
                 </tbody>
             </table>
         </form>
+    </div>
+    <div id="mask" style="display:none;">
+        <div class="dialog" style="width:300px;height:200px;">
+            <div class="dialog-title" style="width:290px">修改权重</div>
+            <div style="height:100px;line-height:100px;text-align:center;">
+                <ul>
+                    <li style="display:inline-block;">权重：</li>
+                    <li style="display:inline-block;"><input type="number" id="ratio" style="height:25px;width:100px;" /></li>
+                </ul>
+            </div>
+            <div style="height:40px;line-height:40px;text-align:center;">
+                <input type="hidden" id="beMeasuredID" />
+                <input type="hidden" id="userID" />
+                <input type="button" value="确定" style="width:80px;height:25px;margin-right:20px;" onclick="saveRatio()" />
+                <input type="button" value="取消" style="width:80px;height:25px;" onclick="cancel()" />
+            </div>
+        </div>
     </div>
 </body>
 </html>

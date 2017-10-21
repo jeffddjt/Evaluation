@@ -221,7 +221,9 @@
                                 @detail.ReviewName
                             </td>
                             <td rowspan="@children.Count" style="text-align: center;">
-                                <input type="text" name="Score_@detail.ID" value="@detail.Score"  @(evaluationTable.Submit?"readonly='readonly'":"")  style="width:40px;text-align:center;" onblur="dataChange(this,@children.Sum(p => p.ReviewScore))" />
+                                <!--
+                                 <input type="text" name="Score_@detail.ID" value="@detail.Score"  @(evaluationTable.Submit?"readonly='readonly'":"")  style="width:40px;text-align:center;" onblur="dataChange(this,@children.Sum(p => p.ReviewScore))" />
+                                -->
                                 (@children.Sum(p => p.ReviewScore))
                             </td>
                             <td>

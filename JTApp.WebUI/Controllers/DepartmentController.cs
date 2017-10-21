@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace JTApp.WebUI.Controllers
 {
-    [BHAuthitication]
+
     public class DepartmentController : Controller
     {
         private IDepartmentService departmentService;

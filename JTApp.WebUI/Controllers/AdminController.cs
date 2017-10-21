@@ -12,7 +12,6 @@ using System.Web.Mvc;
 
 namespace JTApp.WebUI.Controllers
 {
-    [BHAuthitication]
     public class AdminController : Controller
     {
         private IDepartmentService departmentService;

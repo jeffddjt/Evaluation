@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace JTApp.WebUI.Controllers
 {
-    [BHAuthitication]
+
     [BHCheckTimeOver]
     public class EvaluationController : Controller
     {

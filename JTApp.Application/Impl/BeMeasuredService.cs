@@ -15,8 +15,8 @@ namespace JTApp.Application.Impl
 {
     public class BeMeasuredService :ServiceBase<BeMeasuredDataObject,BeMeasured>, IBeMeasuredService
     {
-
-        public BeMeasuredService(IBeMeasuredRepository beMeasuredRepository):base(beMeasuredRepository)
+        public BeMeasuredService(IBeMeasuredRepository beMeasuredRepository)
+            :base(beMeasuredRepository)
         {
         }
 
@@ -46,6 +46,7 @@ namespace JTApp.Application.Impl
             {
                 bm.UserList.AddRange(userInfoList);
             }
+            this.Repository.Update(entity);
             return this.Repository.Commit();
         }
 
@@ -79,6 +80,33 @@ namespace JTApp.Application.Impl
             return JTMapper.Map<IList<BeMeasured>, IList<BeMeasuredDataObject>>(beMeasuredList);
         }
 
+        public void ModifyRatio(int beMeasuredID, int userID, double ratio)
+        {
+            BeMeasured beMeasured = this.Repository.FindByID(beMeasuredID);
+            UserInfo user = this.Repository.Context.DoFindByID<UserInfo>(userID);
+            Measured measured = beMeasured.MeasuredList.Where(p => user.MeasuredList.Select(k => k.ID).Contains(p.ID)).FirstOrDefault();
+            if (ratio == measured.Ratio)
+                return;
+            measured.UserList.Remove(user);
+            if (measured.UserList.Count <= 0)
+                this.Repository.Context.DoRemove(measured);
+            Measured md = beMeasured.MeasuredList.FirstOrDefault(p => p.Ratio == ratio);
+            if (md != null)
+            {
+                md.UserList.Add(user);
+            }
+            else
+            {
+                md = this.Repository.Context.DoCreate<Measured>();
+                md.UserList = new List<UserInfo>() { user };
+                md.Ratio = ratio;
+                beMeasured.MeasuredList.Add(md);
+                
+            }
+            this.Repository.Update(beMeasured);
+            this.Repository.Commit();
+        }
+
         public void RemoveMeasuredUser(int[] selected, int beMeasuredID)
         {
             BeMeasured bm = this.Repository.FindByID(beMeasuredID);
@@ -92,8 +120,12 @@ namespace JTApp.Application.Impl
                     }
                 }
                 if (bm.MeasuredList[i].UserList.Count <= 0)
-                    bm.MeasuredList.RemoveAt(i);
+                {
+                    this.Repository.Context.DoRemove(this.Repository.Context.DoFindByID<Measured>(bm.MeasuredList[i].ID));
+
+                }
             }
+            this.Repository.Update(bm);
             this.Repository.Commit();
         }
     }

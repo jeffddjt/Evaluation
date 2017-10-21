@@ -11,7 +11,6 @@ using System.Web.Mvc;
 
 namespace JTApp.WebUI.Controllers
 {
-    [BHAuthitication]
     public class ArticleController : Controller
     {
         private IArticleService articleService;

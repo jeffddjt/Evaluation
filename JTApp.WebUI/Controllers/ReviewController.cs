@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace JTApp.WebUI.Controllers
 {
-    [BHAuthitication]
+
     public class ReviewController : Controller
     {
         private IReviewService reviewService;

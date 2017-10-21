@@ -209,8 +209,8 @@
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\RightsController.cs" />
     <Compile Include="CustomAttributes\AppHandleErrorAttribute.cs" />
-    <Compile Include="CustomAttributes\BHAuthitication.cs" />
     <Compile Include="CustomAttributes\BHCheckTimeOver.cs" />
+    <Compile Include="CustomAttributes\JTActionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

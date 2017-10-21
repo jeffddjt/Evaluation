@@ -16,5 +16,6 @@ namespace JTApp.ServiceContracts
         void RemoveMeasuredUser(int[] selected, int beMeasuredID);
         IList<BeMeasuredDataObject> GetTotal(int[] ids, int year, JTPager pager);
         List<BeMeasuredDataObject> GetList(int[] ids, int year);
+        void ModifyRatio(int beMeasuredID, int userID, double ratio);
     }
 }

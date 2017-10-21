@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JTApp.DataObject
 {
-    public class MeasuredDataObject
+    public class MeasuredDataObject:DataObjectBase
     {
         public double Ratio { get; set; }
         public int BeMeasuredID { get; set; }

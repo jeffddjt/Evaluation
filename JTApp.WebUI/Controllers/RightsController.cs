@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace JTApp.WebUI.Controllers
 {
-    [BHAuthitication]
+
     public class RightsController : Controller
     {
         private IUserRoleService userRoleService;

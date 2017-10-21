@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace JTApp.WebUI.Controllers
 {
-    [BHAuthitication]
+
     public class PersonManageController : Controller
     {
         private IUserInfoService userInfoService;
@@ -269,6 +269,10 @@ namespace JTApp.WebUI.Controllers
                 return "false";
             }
             
+        }
+        public void ModifyRatio(int? beMeasuredID, int? userID, double? ratio)
+        {
+            this.beMeasuredService.ModifyRatio(beMeasuredID.Value, userID.Value, ratio.Value);
         }
     }
 }
