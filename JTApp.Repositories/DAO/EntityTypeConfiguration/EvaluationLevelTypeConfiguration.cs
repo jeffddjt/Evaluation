@@ -7,11 +7,7 @@ using System.Threading.Tasks;
 
 namespace JTApp.Repositories.DAO.EntityTypeConfiguration
 {
-    public class EvaluationTableTypeConfiguration:TypeConfiguration<EvaluationTable>
+    public class EvaluationLevelTypeConfiguration:TypeConfiguration<EvaluationLevel>
     {
-        public EvaluationTableTypeConfiguration()
-        {
-            Ignore(p => p.Score);
-        }
     }
 }

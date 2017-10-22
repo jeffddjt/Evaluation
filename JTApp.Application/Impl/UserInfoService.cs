@@ -20,6 +20,7 @@ namespace JTApp.Application.Impl
         }
         public override UserInfoDataObject Add(UserInfoDataObject dataObject)
         {
+            dataObject.Password = "12345";
             UserInfo user = this.Repository.Create();
             user = JTMapper.Map(dataObject, user);
             if (dataObject.DepartmentID == 0)
@@ -161,16 +162,9 @@ namespace JTApp.Application.Impl
                 UserInfo userinfo = this.Repository.Create();
                 Department dept = this.Repository.Context.DoGet<Department>(p => p.ID == model.DepartmentID).FirstOrDefault();
                 Duties duties = this.Repository.Context.DoGet<Duties>(p => p.ID == model.DutiesID).FirstOrDefault();
-                userinfo.UserName = model.UserName;
-                userinfo.Password = model.Password;
-                userinfo.Professional = model.Professional;
-                userinfo.WorkNo = model.WorkNo;
-                userinfo.MajorLeader = model.MajorLeader;
+                userinfo = JTMapper.Map(model, userinfo);
                 userinfo.Department = dept;
                 userinfo.Duties = duties;
-                userinfo.Secretary = model.Secretary;
-                userinfo.Director = model.Director;
-                userinfo.Instructor = model.Instructor;
                 this.Repository.Add(userinfo);
             }
             return this.Repository.Commit();

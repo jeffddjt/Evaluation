@@ -233,7 +233,7 @@
     <Content Include="Views\Department\DepartmentManage.cshtml" />
     <Content Include="Views\Duties\DutiesManage.cshtml" />
     <Content Include="Views\Error\ShowError.cshtml" />
-    <Content Include="Views\Evaluation\FillEvaluationTable.cshtml" />
+    <Content Include="Views\Evaluation\FillEvaluationTable1.cshtml" />
     <Content Include="Views\Evaluation\StyleOfWork.cshtml" />
     <Content Include="Views\EvaluationResult\EvaluationCountResult.cshtml" />
     <Content Include="Views\EvaluationResult\EvaluationQuery.cshtml" />
@@ -263,6 +263,7 @@
     <Content Include="Templete\人员导入模板.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\Evaluation\FillEvaluationTable2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

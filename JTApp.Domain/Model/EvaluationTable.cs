@@ -15,7 +15,16 @@ namespace JTApp.Domain.Model
         public int UserInfoID { get; set; }
         public double Ratio { get; set; }
         public bool Submit { get; set; }
-        public double Score { get; set; }
         public virtual List<EvaluationTableDetail> EvaluationTableDetail { get; set; }
+        public double Score
+        {
+            get
+            {
+                return this.EvaluationTableDetail != null && this.EvaluationTableDetail.Count > 0 
+                    ? 
+                    this.EvaluationTableDetail.Where(p=>p.Review.Parent==null).Sum(p => p.Score)
+                    : 0;
+            }
+        }
     }
 }

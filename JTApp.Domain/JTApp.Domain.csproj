@@ -47,6 +47,7 @@
     <Compile Include="Model\BeMeasured.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Duties.cs" />
+    <Compile Include="Model\EvaluationLevel.cs" />
     <Compile Include="Model\EvaluationTable.cs" />
     <Compile Include="Model\EvaluationTableDetail.cs" />
     <Compile Include="Model\FuncModule.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Repository\IArticleRepository.cs" />
     <Compile Include="Repository\IDepartmentRepository.cs" />
     <Compile Include="Repository\IDutiesRepository.cs" />
+    <Compile Include="Repository\IEvaluationLevelRepository.cs" />
     <Compile Include="Repository\IEvaluationTableDetailRepository.cs" />
     <Compile Include="Repository\IEvaluationTableRepository.cs" />
     <Compile Include="Repository\IFuncModuleRepository.cs" />

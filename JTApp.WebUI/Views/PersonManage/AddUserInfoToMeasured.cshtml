@@ -137,6 +137,7 @@
             width: 15px;
             height: 15px;
         }
+
     </style>
     <script type="text/javascript">
         function checkAll(checkbox) {
@@ -169,21 +170,24 @@
         <div style="left:0px;top:0px;right:0px;bottom:0px;overflow:auto;position:absolute;">
             <form id="frmQuery" action="QueryPerson" style="height:auto; margin-bottom:10px;">
                 <div>
-                    <span>工号</span>
-                    <span><input type="text" name="WorkNo" style="width:70px;" /></span>
-                    <span>姓名:</span>
-                    <span><input type="text" name="UserName" style="width:70px;" /></span>
-                    <span>部门：</span>
-                    <span><select name="DepartmentID">
-                          <option value="0">无</option>
-                           @foreach (DepartmentDataObject dept in deptLIst)
-                           {
-                             <option value="@dept.ID">@dept.Name</option>
-                           }
-                        </select></span>
-
-                    <span>职称:</span>
-                    <span><select name="Professional"  style="width:70px;">
+                    <table style="width:100%;" class="tab">
+                        <tr>
+                           <td class="td_title" style="width:120px;">工号:</td>
+                           <td class="td_content" style="width:100px;"><input type="text" name="WorkNo" style="width:100%;" /></td>
+                            <td class="td_title" style="width:100px;">姓名:</td>
+                            <td class="td_content" style="width:100px;"><input type="text" name="UserName" style="width:100%;" /></td>
+                            <td class="td_title" style="width:100px;">部门：</td>
+                            <td class="td_content" style="width:100px;">
+                                <select name="DepartmentID" style="width:100%;">
+                                <option value="0">无</option>
+                                     @foreach (DepartmentDataObject dept in deptLIst)
+                                         {
+                                            <option value="@dept.ID">@dept.Name</option>
+                                         }
+                                </select>
+                            </td>
+                        <td class="td_title" style="width:100px;">职称:</td>
+                    <td class="td_content" style="width:100px;"><select name="Professional" style="width:100%;">
                               @{
                                   List<string> professional = new List<string>
                                 {
@@ -195,25 +199,40 @@
                               {
                                       <option value="@pro">@pro</option>
                               }
-                        </select></span>
-                    <span>职务:</span>
-                    <span><select name="DutiesID" style="width:70px;">
+                        </select></td>
+
+                    <td class="td_title" style="width:100px;">职务:</td>
+                    <td class="td_content" style="width:100px;"><select name="DutiesID" style="width:100%;">
                            <option value="0">无</option>
                             @foreach (DutiesDataObject duty in dutiesList)
                             {
                                     <option value="@duty.ID">@duty.Name</option>
                             }
-                        </select></span>
-                    <span>专业带头人/骨干:</span>
-                    <span><input type="checkbox" name="MajorLeader" value="True" /></span>
-                    <span>系部党政办主任:</span>
-                    <span><input type="checkbox" name="Director" value="True" /></span>
-                    <span>辅导员:</span>
-                    <span><input type="checkbox" name="Instructor" value="True" /></span>
-                    <span>教学系秘:</span>
-                    <span><input type="checkbox" name="Secretary" value="True"/></span>
-                    <span><input type="submit" value="查询" /></span>
+                        </select></td>
+                            <td></td>
+                            </tr>
+                        <tr>
+                    <td class="td_title">专业带头人/骨干:</td>
+                    <td class="td_content"><input type="checkbox" name="MajorLeader" value="True" /></td>
+                    <td class="td_title">系部党政办主任:</td>
+                    <td class="td_content"><input type="checkbox" name="Director" value="True" /></td>
+                    <td class="td_title">辅导员:</td>
+                    <td class="td_content"><input type="checkbox" name="Instructor" value="True" /></td>
+                    <td class="td_title">教学系秘:</td>
+                    <td class="td_content"><input type="checkbox" name="Secretary" value="True"/></td>
+                    <td class="td_title">学工办主任:</td>
+                    <td class="td_content"><input type="checkbox" name="General" value="True" /></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                    <td class="td_title">民主党派:</td>
+                    <td class="td_content"><input type="checkbox" name="Democratic" value="True" /></td>
+                    <td><input type="submit" value="查询" />
                     <input  type="hidden" name="id" value="@beMeasured.ID"/>
+                                </td>
+                        </tr>
+                   
+                  </table>
                 </div>
             </form>
             <form id="frmUser" style="height:auto;">
@@ -237,6 +256,8 @@
                             <th width="200">系部党政办主任</th>
                             <th width="200">辅导员</th>
                             <th width="200">教学系秘</th>
+                            <th width="200">学工办主任</th>
+                            <th width="200">民主党派</th>
                             <th><input type="hidden" name="id" value="@beMeasured.ID" /></th>
                         </tr>
                     </thead>
@@ -254,6 +275,8 @@
                                 <td>@(userInfo.Director ? "是" : "否")</td>
                                 <td>@(userInfo.Instructor ? "是" : "否")</td>
                                 <td>@(userInfo.Secretary ? "是" : "否")</td>
+                                <td>@(userInfo.General ? "是" : "否")</td>
+                                <td>@(userInfo.Democratic ? "是" : "否")</td>
                                 <td></td>
                             </tr>
                         }

@@ -20,6 +20,7 @@ namespace JTApp.WebUI.Controllers
         private IReviewService reviewService;
         private IStyleOfWorkService styleOfWorkService;
         private ITimeOverService timeOverService;
+        private IEvaluationLevelService evaluationLevelService;
         public EvaluationController()
         {
             this.evaluationService = ServiceLocator.Instance.GetRef<IEvaluationTableService>();
@@ -27,16 +28,23 @@ namespace JTApp.WebUI.Controllers
             this.reviewService = ServiceLocator.Instance.GetRef<IReviewService>();
             this.styleOfWorkService = ServiceLocator.Instance.GetRef<IStyleOfWorkService>();
             this.timeOverService = ServiceLocator.Instance.GetRef<ITimeOverService>();
+            this.evaluationLevelService = ServiceLocator.Instance.GetRef<IEvaluationLevelService>();
         }
         public ActionResult FillEvaluationTable(int? id)
         {
+            EvaluationLevelDataObject level;
+            if (this.evaluationLevelService.GetCount() <= 0)
+                level = this.evaluationLevelService.Add(new EvaluationLevelDataObject() { Level = 1 });
+            else
+                level = this.evaluationLevelService.GetFirst();
+
             UserInfoDataObject userInfo = Session["UserInfo"] as UserInfoDataObject;
             int year = this.timeOverService.GetFirst().Year;
             EvaluationTableDataObject evaluationTable = this.evaluationService.GetOne(id.Value,userInfo.ID,year);
             if (evaluationTable == null)
                 evaluationTable = this.evaluationService.Add(id.Value,userInfo.ID);
             ViewData["EvaluationTable"] = evaluationTable;
-            return View();
+            return View(string.Format("FillEvaluationTable{0}", level.Level));
         }
         public ActionResult SaveEvaluationTable(int? id)
         {

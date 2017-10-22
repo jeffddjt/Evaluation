@@ -14,6 +14,7 @@ namespace JTApp.DataObject
         public int UserInfoID { get; set; }
         public double Ratio { get; set; }
         public bool Submit { get; set; }
+        public double Score { get; set; }
         public virtual List<EvaluationTableDetailDataObject> EvaluationTableDetail { get; set; }
     }
 }

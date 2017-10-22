@@ -46,6 +46,7 @@
     <Compile Include="BeMeasuredDataObject.cs" />
     <Compile Include="DepartmentDataObject.cs" />
     <Compile Include="DutiesDataObject.cs" />
+    <Compile Include="EvaluationLevelDataObject.cs" />
     <Compile Include="EvaluationTableDataObject.cs" />
     <Compile Include="EvaluationTableDetailDataObject.cs" />
     <Compile Include="FuncModuleDataObject.cs" />

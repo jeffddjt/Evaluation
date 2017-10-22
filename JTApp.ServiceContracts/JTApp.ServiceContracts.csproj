@@ -44,6 +44,7 @@
     <Compile Include="IBeMeasuredService.cs" />
     <Compile Include="IDepartmentService.cs" />
     <Compile Include="IDutiesService.cs" />
+    <Compile Include="IEvaluationLevelService.cs" />
     <Compile Include="IEvaluationTableDetailService.cs" />
     <Compile Include="IEvaluationTableService.cs" />
     <Compile Include="IFunctionService.cs" />

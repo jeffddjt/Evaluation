@@ -58,6 +58,7 @@
     <Compile Include="DAO\EntityTypeConfiguration\BeMeasuredTypeConfiguration.cs" />
     <Compile Include="DAO\EntityTypeConfiguration\DepartmentTypeConfiguration.cs" />
     <Compile Include="DAO\EntityTypeConfiguration\DutiesTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\EvaluationLevelTypeConfiguration.cs" />
     <Compile Include="DAO\EntityTypeConfiguration\EvaluationTableDetailTypeConfiguration.cs" />
     <Compile Include="DAO\EntityTypeConfiguration\EvaluationTableTypeConfiguration.cs" />
     <Compile Include="DAO\EntityTypeConfiguration\FuncModuleTypeConfiguration.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Repository\BeMeasuredRepository.cs" />
     <Compile Include="Repository\DepartmentRepository.cs" />
     <Compile Include="Repository\DutiesRepository.cs" />
+    <Compile Include="Repository\EvaluationLevelRepository.cs" />
     <Compile Include="Repository\EvaluationTableDetailRepository.cs" />
     <Compile Include="Repository\EvaluationTableRepository.cs" />
     <Compile Include="Repository\FuncModuleRepository.cs" />

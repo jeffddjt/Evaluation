@@ -58,8 +58,7 @@ namespace JTApp.Application.AutoMap
                 .ForMember(dest => dest.BeMeasuredID, source => source.MapFrom(src => src.BeMeasured.ID));
             cfg.CreateMap<MeasuredDataObject, Measured>();
 
-            cfg.CreateMap<EvaluationTable, EvaluationTableDataObject>()
-                .ForMember(dest => dest.BeMeasuredUserInfoID, source => source.MapFrom(src => src.BeMeasured.UserInfo.ID));
+            cfg.CreateMap<EvaluationTable, EvaluationTableDataObject>();
             cfg.CreateMap<EvaluationTableDataObject, EvaluationTable>();
 
             cfg.CreateMap<EvaluationTableDetail, EvaluationTableDetailDataObject>()
@@ -78,7 +77,10 @@ namespace JTApp.Application.AutoMap
 
             cfg.CreateMap<Department, TreeNodeDataObject>()
                 .ForMember(dest => dest.text, src => src.MapFrom(p => p.Name))
-                .ForMember(dest => dest.nodes, src => src.MapFrom(p => p.Children));                
+                .ForMember(dest => dest.nodes, src => src.MapFrom(p => p.Children));
+
+            cfg.CreateMap<EvaluationLevel, EvaluationLevelDataObject>();
+            cfg.CreateMap<EvaluationLevelDataObject, EvaluationLevel>();
 
             Mapper.Initialize(cfg);
         }

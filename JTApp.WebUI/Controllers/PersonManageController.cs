@@ -90,10 +90,12 @@ namespace JTApp.WebUI.Controllers
                 userInfo.Professional = row[3].ToString();
                 DutiesDataObject duty = dutiesList.FirstOrDefault(p => p.Name == row[4].ToString());
                 userInfo.DutiesID = duty == null ? 0 : duty.ID;
-                userInfo.MajorLeader = row[5].ToString() == "是" ? true : false;
+                userInfo.MajorLeader = row[5].ToString() == "是";
                 userInfo.Director = row[6].ToString() == "是";
                 userInfo.Instructor = row[7].ToString() == "是";
                 userInfo.Secretary = row[8].ToString() == "是";
+                userInfo.General = row[9].ToString() == "是";
+                userInfo.Democratic = row[10].ToString() == "是";
                 list.Add(userInfo);
             }
             int count = this.userInfoService.Import(list);
@@ -206,9 +208,9 @@ namespace JTApp.WebUI.Controllers
             }
             IList<UserInfoDataObject> userList = this.userInfoService.GetList(ids.ToArray());
             if (!string.IsNullOrWhiteSpace(userInfo.WorkNo))
-                userList = userList.Where(p => p.WorkNo == userInfo.WorkNo).ToList();
+                userList = userList.Where(p => p.WorkNo.Contains(userInfo.WorkNo)).ToList();
             if (!string.IsNullOrWhiteSpace(userInfo.UserName))
-                userList = userList.Where(p => p.UserName == userInfo.UserName).ToList();
+                userList = userList.Where(p => p.UserName.Contains(userInfo.UserName)).ToList();
             if (userInfo.DepartmentID != 0)
             {
                 userList = userList.Where(p => this.departmentService.GetOne(userInfo.DepartmentID).GetIDArray().Contains(p.DepartmentID)).ToList();
@@ -227,6 +229,10 @@ namespace JTApp.WebUI.Controllers
                 userList = userList.Where(p => p.Instructor).ToList();
             if (userInfo.Secretary)
                 userList = userList.Where(p => p.Secretary).ToList();
+            if (userInfo.General)
+                userList = userList.Where(p => p.General).ToList();
+            if (userInfo.Democratic)
+                userList = userList.Where(p => p.Democratic).ToList();
             int recordCount = userList.Count;
 
             int pageCount = (recordCount + pageSize.Value - 1) / pageSize.Value;

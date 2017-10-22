@@ -49,6 +49,7 @@
     <Compile Include="Impl\BeMeasuredService.cs" />
     <Compile Include="Impl\DepartmentService.cs" />
     <Compile Include="Impl\DutiesService.cs" />
+    <Compile Include="Impl\EvaluationLevelService.cs" />
     <Compile Include="Impl\EvaluationTableDetailService.cs" />
     <Compile Include="Impl\EvaluationTableService.cs" />
     <Compile Include="Impl\FunctionService.cs" />

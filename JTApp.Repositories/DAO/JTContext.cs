@@ -26,6 +26,7 @@ namespace JTApp.Repositories.DAO
         public DbSet<Measured> Measured { get; set; }
         public DbSet<EvaluationTable> EvaluationTable { get; set; }
         public DbSet<EvaluationTableDetail> EvaluationTableDetail { get; set; }
+        public DbSet<EvaluationLevel> EvaluationLevel { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -40,7 +41,8 @@ namespace JTApp.Repositories.DAO
                 .Add(new BeMeasuredTypeConfiguration())
                 .Add(new MeasuredTypeConfiguration())
                 .Add(new EvaluationTableTypeConfiguration())
-                .Add(new EvaluationTableDetailTypeConfiguration());
+                .Add(new EvaluationTableDetailTypeConfiguration())
+                .Add(new EvaluationLevelTypeConfiguration());
             Database.SetInitializer(new DatabaseInitialize());
             base.OnModelCreating(modelBuilder);
         }

@@ -22,13 +22,13 @@ namespace JTApp.Application.Impl
             if (detail == null)
                 return;
             detail.Score = score;
-            this.Repository.Commit();
             if (detail.Review.Parent != null)
             {
                 EvaluationTableDetail etd = detail.EvaluationTable.EvaluationTableDetail.FirstOrDefault(p => p.Review.ID == detail.Review.Parent.ID);
                 List<EvaluationTableDetail> detailList = etd.EvaluationTable.EvaluationTableDetail.Where(p => p.Review.Parent != null && p.Review.Parent.ID == etd.Review.ID).ToList();
                 etd.Score = detailList.Sum(p => p.Score);
-            }
+            }this.Repository.Update(detail);
+            this.Repository.Commit();
         }
     }
 }

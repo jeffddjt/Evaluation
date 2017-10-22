@@ -52,7 +52,6 @@ namespace JTApp.Application.Impl
         public void Update(int evalID)
         {
             EvaluationTable entity = this.Repository.FindByID(evalID);
-            entity.Score = entity.EvaluationTableDetail.Sum(p => p.Score);
             entity.Submit = true;
             this.Repository.Update(entity);
             this.Repository.Commit();
