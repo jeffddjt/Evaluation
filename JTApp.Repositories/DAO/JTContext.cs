@@ -11,7 +11,9 @@ namespace JTApp.Repositories.DAO
 {
     public class JTContext:DbContext
     {
-        public JTContext():base("Server=127.0.0.1;Database=Evaluation;User ID=sa;Password=aaaa1111!;")
+        //public JTContext():base("Server=127.0.0.1;Database=Evaluation;User ID=sa;Password=aaaa1111!;")
+        //{ }
+        public JTContext() : base("JTConnection")
         { }
 
         public DbSet<UserInfo> UserInfo { get; set; }

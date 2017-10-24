@@ -1,0 +1,12 @@
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\JTApp.Infrastructure.dll
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\JTApp.Infrastructure.pdb
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\Autofac.dll
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\NPOI.dll
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\NPOI.OOXML.dll
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\NPOI.OpenXml4Net.dll
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\NPOI.OpenXmlFormats.dll
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\Autofac.xml
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\NPOI.xml
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\obj\Release\JTApp.Infrastructure.dll
+D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\obj\Release\JTApp.Infrastructure.pdb

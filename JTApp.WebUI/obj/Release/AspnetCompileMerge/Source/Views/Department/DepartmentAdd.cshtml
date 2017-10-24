@@ -1,0 +1,56 @@
+﻿@using JTApp.DataObject;
+@{
+    Layout = null;
+    int parentID = int.Parse(ViewData["ParentID"].ToString());
+    List<DepartmentDataObject> deptList = ViewData["DeptList"] as List<DepartmentDataObject>;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DepartmentAdd</title>
+</head>
+<body>
+    <div>
+        <form action="SaveDepartment" method="post">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+                <tr>
+                    <td style="width:100px;">
+                        名称：
+                    </td>
+                    <td>
+                        <input type="text" name="Name" value="" style="width:150px;text-align:left;padding:3px;" />
+                        <input type="hidden" name="ID" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>上级机构:</td>
+                    <td>
+                        <select name="ParentID">
+                            <option value="0" selected="selected">无</option>
+                            @foreach (DepartmentDataObject dept in deptList)
+                            {
+                                if (parentID == dept.ID)
+                                {
+                                    <option value="@dept.ID" selected="selected">@dept.Name</option>
+                                }
+                                else
+                                {
+                                    <option value="@dept.ID">@dept.Name</option>
+                                }
+                            }
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center;">
+                        <input type="submit" value="保存" style="width:50px;height:30px;margin:5px;" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

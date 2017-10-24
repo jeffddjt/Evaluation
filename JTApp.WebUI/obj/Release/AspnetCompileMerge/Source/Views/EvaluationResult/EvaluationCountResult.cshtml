@@ -1,0 +1,130 @@
+﻿@using JTApp.DataObject;
+@{
+    Layout = null;
+    List<BeMeasuredDataObject> beMeasuredList = ViewData["beMeasuredList"] as List<BeMeasuredDataObject>;
+    int pageSize = int.Parse(ViewData["PageSize"].ToString());
+    int pageIndex = int.Parse(ViewData["PageIndex"].ToString());
+    int pageCount = int.Parse(ViewData["PageCount"].ToString());
+    int recordCount = int.Parse(ViewData["RecordCount"].ToString());
+    int deptID = int.Parse(ViewData["DeptID"].ToString());
+    
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EvaluationCountResult</title>
+    <link href="~/Assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Assets/css/pagination.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Assets/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="~/Assets/js/function.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".msgtable tr:nth-child(odd)").addClass("tr_bg"); //隔行变色
+            $(".msgtable tr").hover(
+                function () {
+                    $(this).addClass("tr_hover_col");
+                },
+                function () {
+                    $(this).removeClass("tr_hover_col");
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <form action="Download_@ViewContext.RouteData.Values["action"]" method="post">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+            <tr>
+                <td style="border:none;">
+                    <input type="submit" value="下载" class="btn_bg" />
+                    <input type="hidden" name="deptID" value="@deptID" />
+                </td>
+            </tr>
+        </table>
+        </form>
+        @{
+            List<double> ratios = new List<double>();
+            beMeasuredList.ForEach(item =>
+            {
+                ratios.AddRange(item.MeasuredList.GroupBy(p=>p.Ratio).Select(k=>k.Key).ToArray());
+            });
+            ratios = ratios.Distinct().OrderBy(p => -p).ToList();
+        }
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+            <tr>
+                <th width="15%">
+                    用户名
+                </th>
+                @if (ratios.Count <= 0)
+                {
+                    <th>投票人数</th>
+                        <th>投票人数</th>
+                        <th>投票人数</th>
+                }
+                @foreach (double ratio in ratios)
+                {
+                    <th width="15%">
+                        @ratio%投票人数
+                    </th>
+                }
+            </tr>
+            @foreach (BeMeasuredDataObject bm in beMeasuredList)
+            {
+                <tr>
+                    <td style="text-align:center;">@bm.UserInfo.UserName</td>
+                    @if (ratios.Count <= 0)
+                    {
+                        <td style="text-align:center;">0</td>
+                        <td style="text-align:center;">0</td>
+                        <td style="text-align:center;">0</td>
+                    }
+                    @foreach (double ratio in ratios)
+                    {
+                        <td style="text-align:center;">
+                            @{
+                                if (!ViewContext.RouteData.Values["action"].ToString().Contains("StyleOfWork"))
+                                {
+                                    Write(bm.EvaluationTableList.Where(p => p.Ratio == ratio && p.Submit).Count());
+                                }
+                                else
+                                {
+                                    Write(bm.StyleOfWorkList.Where(p => p.Ratio == ratio && p.Score > 0).Count());
+                                }
+                            }
+                        </td>
+                                }
+                </tr>
+                                }
+        </table>
+        <form>
+            <span>第</span>
+            <span>@pageIndex</span>
+            <span>页/共</span>
+            <span>@pageCount</span>
+            <span>页</span>
+            <span>共</span>
+            <span>@recordCount</span>
+            <span>条记录</span>
+            <span>每页</span>
+            <input type="text" name="pageSize" style="width:30px;text-align:center;" value="@pageSize" />
+            <span>行</span>
+            <span><a href="@ViewContext.RouteData.Values["action"]?deptID=@deptID&pageSize=@pageSize&pageIndex=1"><img src="~/Assets/images/first.gif" /></a></span>
+            <span><a href="@ViewContext.RouteData.Values["action"]?deptID=@deptID&pageSize=@pageSize&pageIndex=@(pageIndex-1)"><img src="~/Assets/images/prev.gif" /></a></span>
+            <span><input type="text" name="pageIndex" style="width:30px;text-align:center" value="@pageIndex" /></span>
+            <span>
+                <input type="submit" value="GO" />
+                <input type="hidden" name="deptID" value="@deptID" />
+            </span>
+            <span><a href="@ViewContext.RouteData.Values["action"]?deptID=@deptID&pageSize=@pageSize&pageIndex=@(pageIndex+1)"><img src="~/Assets/images/next.gif" /></a></span>
+            <span><a href="@ViewContext.RouteData.Values["action"]?deptID=@deptID&pageSize=@pageSize&pageIndex=@(pageCount)"><img src="~/Assets/images/last.gif" /></a></span>
+        </form>
+    </div>
+</body>
+</html>

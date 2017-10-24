@@ -1,0 +1,317 @@
+﻿@using JTApp.DataObject;
+@{
+    Layout = null;
+    BeMeasuredDataObject beMeasured = ViewData["BeMeasured"] as BeMeasuredDataObject;
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditBeMeasured</title>
+    <link href="~/Assets/css/pagination.css" rel="stylesheet" type="text/css" />
+    <link href="~/Assets/css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Assets/js/jquery-1.3.2.min.js"></script>
+    <style type="text/css">
+        .tab {
+            margin: 0 auto;
+            margin-bottom: 5px;
+        }
+
+            .tab tr {
+                line-height: 25px;
+            }
+
+                .tab tr:hover {
+                    background-color: #ecebeb;
+                }
+
+            .tab td {
+                font-size: 13px;
+                padding: 0px 5px;
+                text-align: center;
+            }
+
+            .tab .td_title {
+                width: 100px;
+                text-align: right;
+            }
+
+            .tab .td_content {
+                text-align: left;
+            }
+        table{
+            border-collapse:collapse;
+        }
+        th,td{
+            border:1px solid #000;
+        }
+        .sub {
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            width: 82px;
+            height: 35px;
+            line-height: 38px;
+            border-radius: 3px;
+            background: url(../Assets/images/sub_bg.gif) no-repeat;
+            cursor: pointer;
+            padding-left: 32px;
+            top: 0px;
+            margin-right: 0px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .score {
+            width: 30px;
+            height: 20px;
+            border-radius: 2px;
+            background-color: #FFF;
+            border: 1px #CCCCCC solid;
+        }
+
+        #mask{
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background:rgba(255,255,255,0.4);
+        }
+
+        .dialog {
+            width: 640px;
+            height: 420px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -320px;
+            margin-top: -210px;
+            box-shadow: 0px 0px 20px #000;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+            .dialog .dialog-title {
+                background: #cae2f0;
+                width: 630px;
+                height: 40px;
+                line-height: 40px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                font-family: "Microsoft YaHei";
+                font-size: 14px;
+                font-weight: bold;
+                padding-left: 10px;
+                letter-spacing: 2px;
+            }
+
+            .dialog .content {
+                font-family: "Microsoft YaHei";
+                font-size: 12px;
+            }
+
+                .dialog .content td {
+                    padding: 5px;
+                }
+
+        .dialog-btn {
+            text-align: center;
+            border: 1px solid red;
+            height: 100%;
+            width: 100%;
+        }
+
+            .dialog-btn li {
+                list-style-type: none;
+                float: left;
+                margin: 5px;
+            }
+
+        .btn-cancel {
+            background: url(../Assets/images/close.png) no-repeat;
+            width: 25px;
+            height: 25px;
+            float: right;
+            margin-right: 7px;
+            margin-top: 7px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        function checkAll(checkbox) {
+            var checked = $(checkbox).attr("checked");
+            $(":checkbox").each(function () {
+                $(this).attr("checked", checked);
+            });
+        }
+        function removeUserInfo() {
+            $.ajax({
+                url: "RemoveUserInfoFromBeMeasured",
+                type: "post",
+                data: $("#frmMeasured").serialize(),
+                success: function (data) {
+                    location.reload();
+                }
+            });
+        }
+        function modifyRatio(beMeasuredID,userID, ratio) {
+            $("#userID").val(userID);
+            $("#beMeasuredID").val(beMeasuredID);
+            $("#ratio").val(ratio);
+            $("#mask").show("fast");
+        }
+        function cancel() {
+            $("#mask").hide("fast");
+        }
+        function saveRatio() {
+            $.ajax({
+                url: "ModifyRatio",
+                type: "post",
+                data: { 
+                    beMeasuredID: $("#beMeasuredID").val(),
+                    userID:$("#userID").val(),
+                    ratio: $("#ratio").val() 
+                },
+                success: function (data) {
+                    alert("修改成功!");
+                    $("#mask").hide("fast");
+                    location.reload();
+                }
+
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <table width="100%" border="1px" bordercolor="#FFFFFF" cellpadding="0" cellspacing="0" class="tab">
+            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                <td class="td_title">工号：</td>
+                <td class="td_content">@beMeasured.UserInfo.WorkNo</td>
+                <td class="td_title">用户名：</td>
+                <td class="td_content">@beMeasured.UserInfo.UserName</td>
+            </tr>
+            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                <td class="td_title">部门</td>
+                <td class="td_content">@beMeasured.UserInfo.DepartmentName</td>
+                <td class="td_title">职称</td>
+                <td class="td_content">@beMeasured.UserInfo.Professional</td>
+            </tr>
+
+            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                <td class="td_title">职务</td>
+                <td class="td_content">@beMeasured.UserInfo.DutiesName</td>
+                <td class="td_title">专业带头人/骨干</td>
+                <td class="td_content">@(beMeasured.UserInfo.MajorLeader ? "是" : "否")</td>
+            </tr>
+            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                <td class="td_title">系部党政办主任</td>
+                <td class="td_content">@(beMeasured.UserInfo.Director ? "是" : "否")</td>
+                <td class="td_title">辅导员</td>
+                <td class="td_content">@(beMeasured.UserInfo.Instructor ? "是" : "否")</td>
+            </tr>
+            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                <td class="td_title">教学系秘</td>
+                <td class="td_content">@(beMeasured.UserInfo.Secretary ? "是" : "否")</td>
+                <td class="td_title">学工办主任</td>
+                <td class="td_content">@(beMeasured.UserInfo.General ? "是" : "否")</td>
+            </tr>
+            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                <td class="td_title">民主党派</td>
+                <td class="td_content">@(beMeasured.UserInfo.Democratic ? "是" : "否")</td>
+                <td class="td_title"></td>
+                <td class="td_content"></td>
+            </tr>
+        </table>
+        <div style="height:30px;font-weight:bold;line-height:30px;"><span>参与测评人员</span></div>
+        <div style="height:30px;line-height:30px;">
+            <span><input type="button" value="添加" onclick="location.href='AddUserInfoToMeasured?id=@beMeasured.ID'"/></span>
+            <span><input type="button" value="移除" onclick="removeUserInfo()"/></span>
+        </div>
+        <form id="frmMeasured">
+            <input type="hidden" name="beMeasuredID" value="@beMeasured.ID" />
+            <table width="100%" border="1px" bordercolor="#FFFFFF" cellpadding="0" cellspacing="0" class="tab">
+                <thead>
+                    <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px" ;>
+                        <th width="30"><input type="checkbox" onclick="checkAll(this)" /></th>
+                        <th width="50">权重</th>
+                        <th width="50">工号</th>
+                        <th width="100">姓名</th>
+                        <th width="200">部门</th>
+                        <th width="200">职称</th>
+                        <th width="200">职务</th>
+                        <th width="200">专业带头人/骨干</th>
+                        <th width="200">系部党政办主任</th>
+                        <th width="200">辅导员</th>
+                        <th width="200">教学系秘</th>
+                        <th width="200">学工办主任</th>
+                        <th width="200">民主党派</th>
+                        <th width="200"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (MeasuredDataObject measured in beMeasured.MeasuredList)
+                    {
+                        <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                            <td><input type="checkbox" name="selected" value="@measured.UserList[0].ID" /></td>
+                            <td rowspan="@measured.UserList.Count">@measured.Ratio</td>
+                            <td>@measured.UserList[0].WorkNo</td>
+                            <td>@measured.UserList[0].UserName</td>
+                            <td>@measured.UserList[0].DepartmentName</td>
+                            <td>@measured.UserList[0].Professional</td>
+                            <td>@measured.UserList[0].DutiesName</td>
+                            <td>@(measured.UserList[0].MajorLeader ? "是" : "否")</td>
+                            <td>@(measured.UserList[0].Director ? "是" : "否")</td>
+                            <td>@(measured.UserList[0].Instructor ? "是" : "否")</td>
+                            <td>@(measured.UserList[0].Secretary ? "是" : "否")</td>
+                            <td>@(measured.UserList[0].General?"是":"否")</td>
+                            <td>@(measured.UserList[0].Democratic?"是":"否")</td>
+                            <td><a href="#" onclick="modifyRatio(@beMeasured.ID,@measured.UserList[0].ID,@measured.Ratio)">修改权重</a></td>                       
+                         </tr>
+                        for (int i = 1; i < measured.UserList.Count; i++)
+                        {
+                            <tr bordercolor="#d3dbde" bgcolor="#fbf7f7" height="35px">
+                                <td><input type="checkbox" name="selected" value="@measured.UserList[i].ID" /></td>
+                                <td>@measured.UserList[i].WorkNo</td>
+                                <td>@measured.UserList[i].UserName</td>
+                                <td>@measured.UserList[i].DepartmentName</td>
+                                <td>@measured.UserList[i].Professional</td>
+                                <td>@measured.UserList[i].DutiesName</td>
+                                <td>@(measured.UserList[i].MajorLeader ? "是" : "否")</td>
+                                <td>@(measured.UserList[i].Director ? "是" : "否")</td>
+                                <td>@(measured.UserList[i].Instructor ? "是" : "否")</td>
+                                <td>@(measured.UserList[i].Secretary ? "是" : "否")</td>
+                                <td>@(measured.UserList[i].General ? "是" : "否")</td>
+                                <td>@(measured.UserList[i].Democratic ? "是" : "否")</td>
+                                <td><a href="#"  onclick="modifyRatio(@beMeasured.ID,@measured.UserList[i].ID,@measured.Ratio)">修改权重</a></td>
+                            </tr>
+
+                        }
+                    }
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div id="mask" style="display:none;">
+        <div class="dialog" style="width:300px;height:200px;">
+            <div class="dialog-title" style="width:290px">修改权重</div>
+            <div style="height:100px;line-height:100px;text-align:center;">
+                <ul>
+                    <li style="display:inline-block;">权重：</li>
+                    <li style="display:inline-block;"><input type="number" id="ratio" style="height:25px;width:100px;" /></li>
+                </ul>
+            </div>
+            <div style="height:40px;line-height:40px;text-align:center;">
+                <input type="hidden" id="beMeasuredID" />
+                <input type="hidden" id="userID" />
+                <input type="button" value="确定" style="width:80px;height:25px;margin-right:20px;" onclick="saveRatio()" />
+                <input type="button" value="取消" style="width:80px;height:25px;" onclick="cancel()" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

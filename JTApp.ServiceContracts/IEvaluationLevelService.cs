@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace JTApp.ServiceContracts
 {
-    public interface IEvaluationLevelService:IServiceBase<EvaluationLevelDataObject>
+    public interface IEvaluationLevelService : IServiceBase<EvaluationLevelDataObject>
     {
+        void SetLevel(int level);
     }
 }

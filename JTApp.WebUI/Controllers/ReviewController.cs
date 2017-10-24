@@ -16,11 +16,13 @@ namespace JTApp.WebUI.Controllers
     {
         private IReviewService reviewService;
         private ITimeOverService timeOverService;
+        private IEvaluationLevelService evaluationLevelService;
 
         public ReviewController()
         {
             this.reviewService = ServiceLocator.Instance.GetRef<IReviewService>();
             this.timeOverService = ServiceLocator.Instance.GetRef<ITimeOverService>();
+            this.evaluationLevelService = ServiceLocator.Instance.GetRef<IEvaluationLevelService>();
         }
         // GET: Review
         public ActionResult Index()
@@ -28,8 +30,12 @@ namespace JTApp.WebUI.Controllers
             TimeOverDataObject timeover = timeOverService.GetFirst();
             int year = timeover == null ? DateTime.Now.Year : timeover.Year;
             IList<ReviewDataObject> reviewList = reviewService.GetList(year);
+            EvaluationLevelDataObject level = this.evaluationLevelService.GetFirst();
+            if (level == null)
+                level = this.evaluationLevelService.Add(new EvaluationLevelDataObject() { Level = 1 });
             ViewData["ReviewList"] = reviewList.OrderBy(p=>p.Sort).ToList();
             ViewData["Year"] = year;
+            ViewData["EvaluationLevel"] = level;
             return View();
         }
         public void SaveReview(ReviewDataObject review)
@@ -51,6 +57,13 @@ namespace JTApp.WebUI.Controllers
             ReviewDataObject review = this.reviewService.GetOne(id.Value);
             JObject obj = JObject.FromObject(review);
             return obj.ToString();
+        }
+        public bool SetLevel(int? level)
+        {
+            if (level == null)
+                return false;
+            this.evaluationLevelService.SetLevel(level.Value);
+            return true;
         }
     }
 }

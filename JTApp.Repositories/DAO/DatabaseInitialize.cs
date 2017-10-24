@@ -40,7 +40,8 @@ namespace JTApp.Repositories.DAO
             context.Department.Add(new Department { Name = "党政群团教辅" });
             context.Department.Add(new Department { Name = "教学系(部)" });
             context.Article.Add(new Article());
-            context.TimeOver.Add(new TimeOver { Year = DateTime.Now.Year, DateTime = DateTime.Now.AddDays(-5) });
+            context.TimeOver.Add(new TimeOver { Year = DateTime.Now.Year, DateTime = DateTime.Now.AddDays(5) });
+            context.EvaluationLevel.Add(new EvaluationLevel { Level = 2 });
             context.SaveChanges();
             base.Seed(context);
         }

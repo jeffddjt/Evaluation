@@ -1,0 +1,78 @@
+﻿@using JTApp.DataObject;
+@{
+    Layout = null;
+    List<FuncModuleDataObject> functionList = ViewData["FunctionList"] as List<FuncModuleDataObject>;
+    int userRoleID = int.Parse(ViewData["UserRoleID"].ToString());
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddRights</title>
+    <link href="~/Assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Assets/css/pagination.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Assets/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="~/Assets/js/function.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".msgtable tr:nth-child(odd)").addClass("tr_bg"); //隔行变色
+            $(".msgtable tr").hover(
+                function () {
+                    $(this).addClass("tr_hover_col");
+                },
+                function () {
+                    $(this).removeClass("tr_hover_col");
+                }
+            );
+        });
+        function returnRole() {
+            location.href = "EditRole?id=@userRoleID";
+        }
+        function chkRightAll(checkbox) {
+            var checked = $(checkbox).attr("checked");
+            $(":checkbox").each(function () {
+                $(this).attr("checked", checked);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form action="AddRightsToUserRole">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable" style="margin-bottom:20px;">
+               <tr>
+                   <th style="width:30px;"><input type="checkbox" onclick="chkRightAll(this)"/></th>
+                   <th style="width:50px;">ID</th>
+                   <th style="width:200px;">名称</th>
+                   <th></th>
+               </tr>
+                @foreach (FuncModuleDataObject fun in functionList)
+                {
+                    <tr>
+                        <td style="text-align:center;">
+                            <input type="checkbox" name="selected" value="@fun.ID" />
+                        </td>
+                        <td style="text-align:center;">@fun.ID</td>
+                        <td style="text-align:center;">@fun.ModuleName</td>
+                        <td></td>
+                    </tr>                    
+                }
+                <tr>
+                    <td colspan="4">
+                        <span>
+                        <input type="submit" value="确定" class="btn_bg" />
+                        </span>
+                        <span>
+                            <input type="button" value="返回" class="btn_bg" onclick="returnRole()"/>
+                        </span>
+                        <input type="hidden" name="userRoleID" value="@userRoleID" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

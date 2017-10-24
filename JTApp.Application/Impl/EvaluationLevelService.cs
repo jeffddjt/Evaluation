@@ -16,5 +16,22 @@ namespace JTApp.Application.Impl
         public EvaluationLevelService(IEvaluationLevelRepository repository) : base(repository)
         {
         }
+
+        public void SetLevel(int level)
+        {
+            EvaluationLevel el = this.Repository.GetFirst();
+            if (el == null)
+            {
+                el = this.Repository.Create();
+                el.Level = level;
+                this.Repository.Add(el);
+            }
+            else
+            {
+                el.Level = level;
+                this.Repository.Update(el);
+            }
+            this.Repository.Commit();
+        }
     }
 }

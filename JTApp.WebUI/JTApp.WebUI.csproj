@@ -264,6 +264,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Evaluation\FillEvaluationTable2.cshtml" />
+    <None Include="Properties\PublishProfiles\本地磁盘.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

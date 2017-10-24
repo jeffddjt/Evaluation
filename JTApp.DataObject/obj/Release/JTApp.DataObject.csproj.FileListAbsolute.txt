@@ -1,0 +1,4 @@
+D:\Projects\建材学院民主测评系统\JTApp.DataObject\bin\Release\JTApp.DataObject.dll
+D:\Projects\建材学院民主测评系统\JTApp.DataObject\bin\Release\JTApp.DataObject.pdb
+D:\Projects\建材学院民主测评系统\JTApp.DataObject\obj\Release\JTApp.DataObject.dll
+D:\Projects\建材学院民主测评系统\JTApp.DataObject\obj\Release\JTApp.DataObject.pdb
