@@ -122,11 +122,33 @@ namespace JTApp.Application.Impl
 
         public int[] GetHaventEvaUserIDList(int userInfoID)
         {
-            return this.Repository.Get(p => p.ID == userInfoID).SelectMany(p => p.EvaluationTable.Select(k => k.BeMeasuredID)).ToArray();
+            int[] result = new int[] { };
+            try
+            {
+                UserInfo userinfo = this.Repository.Get(p => p.ID == userInfoID).FirstOrDefault();
+                if (userinfo == null || userinfo.EvaluationTable == null || userinfo.EvaluationTable.Count <= 0)
+                    return result;
+                return userinfo.EvaluationTable.Where(p=>!p.Submit).Select(p => p.BeMeasuredID).ToArray();
+            }
+            catch
+            {
+                return new int[] { };
+            }
         }
         public int[] GetHaventStyleOfWorkUserIDList(int userInfoID)
         {
-            return this.Repository.Get(p => p.ID == userInfoID).SelectMany(p => p.StyleOfWork.Select(k => k.BeMeasuredID)).ToArray();
+            int[] result = new int[] { };
+            try
+            {
+                UserInfo userinfo = this.Repository.Get(p => p.ID == userInfoID).FirstOrDefault();
+                if (userinfo == null || userinfo.StyleOfWork == null || userinfo.StyleOfWork.Count <= 0)
+                    return result;
+                return userinfo.StyleOfWork.Where(p=>p.Score>0).Select(p => p.BeMeasuredID).ToArray();
+            }
+            catch
+            {
+                return new int[] { };
+            }
         }
 
         public List<string> GetFunctionList(UserInfoDataObject userInfo)

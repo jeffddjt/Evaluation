@@ -318,9 +318,9 @@ namespace JTApp.WebUI.Controllers
             {
                 new DataColumn("工号"),
                 new DataColumn("姓名"),
-                new DataColumn("没有"),
-                new DataColumn("有些"),
-                new DataColumn("很严重")
+                new DataColumn("没有(100)"),
+                new DataColumn("有些(80)"),
+                new DataColumn("很严重(50)")
             }
             );
             foreach (BeMeasuredDataObject bm in beMeasuredList)
@@ -328,9 +328,9 @@ namespace JTApp.WebUI.Controllers
                 DataRow row = dt.NewRow();
                 row["工号"] = bm.UserInfo.WorkNo;
                 row["姓名"] = bm.UserInfo.UserName;
-                row["没有"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 100; });
-                row["有些"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 80; });
-                row["很严重"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 50; });
+                row["没有(100)"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 100; });
+                row["有些(80)"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 80; });
+                row["很严重(50)"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 50; });
                 dt.Rows.Add(row);
             }
             ViewResult view = new ViewResult();
@@ -425,9 +425,9 @@ namespace JTApp.WebUI.Controllers
             {
                 new DataColumn("工号"),
                 new DataColumn("姓名"),
-                new DataColumn("没有"),
-                new DataColumn("有些"),
-                new DataColumn("很严重")
+                new DataColumn("没有(100)"),
+                new DataColumn("有些(80)"),
+                new DataColumn("很严重(50)")
             }
             );
             foreach (BeMeasuredDataObject bm in beMeasuredList)
@@ -435,9 +435,9 @@ namespace JTApp.WebUI.Controllers
                 DataRow row = dt.NewRow();
                 row["工号"] = bm.UserInfo.WorkNo;
                 row["姓名"] = bm.UserInfo.UserName;
-                row["没有"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 100; });
-                row["有些"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 80; });
-                row["很严重"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 50; });
+                row["没有(100)"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 100; });
+                row["有些(80)"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 80; });
+                row["很严重(50)"] = bm.StyleOfWorkList.Count((p) => { return p.Score == 50; });
                 dt.Rows.Add(row);
             }
 

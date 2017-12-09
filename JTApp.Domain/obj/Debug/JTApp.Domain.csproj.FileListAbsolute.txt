@@ -10,3 +10,4 @@ G:\jcxy\JTApp.WebUI\bin\JTApp.Domain.dll
 G:\jcxy\JTApp.WebUI\bin\JTApp.Domain.pdb
 G:\jcxy\JTApp.Domain\obj\Debug\JTApp.Domain.dll
 G:\jcxy\JTApp.Domain\obj\Debug\JTApp.Domain.pdb
+G:\jcxy\JTApp.Domain\obj\Debug\JTApp.Domain.csprojResolveAssemblyReference.cache

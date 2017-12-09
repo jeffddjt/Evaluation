@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/PersonManage/EditBeMeasured.cshtml" hash="1dc92fa5" filehash="fffffce722c5e86d" flags="110000" assembly="App_Web_l13est5y" type="ASP._Page_Views_PersonManage_EditBeMeasured_cshtml">
+<preserve resultType="2" virtualPath="/Views/PersonManage/EditBeMeasured.cshtml" hash="1dc92fa5" filehash="fffffce722c5e86d" flags="110000" assembly="App_Web_m1xjmfev" type="ASP._Page_Views_PersonManage_EditBeMeasured_cshtml">
     <filedeps>
         <filedep name="/Views/PersonManage/EditBeMeasured.cshtml" />
     </filedeps>

@@ -31,8 +31,11 @@ namespace JTApp.WebUI.Controllers
         public ActionResult Index()
         {
             IList<BeMeasuredDataObject> beMeasuredList = this.beMeasuredService.GetList();
-            ViewData["UserInfo"] = Session["UserInfo"] as UserInfoDataObject;
+            UserInfoDataObject userInfo=Session["UserInfo"] as UserInfoDataObject;
+            ViewData["UserInfo"] = userInfo;
             ViewData["DepartmentList"] = this.departmentService.GetRootList();
+            ViewData["HaventEval"] = this.userInfoService.GetHaventEvaUserIDList(userInfo.ID);
+            ViewData["HaventStyleOfWork"] = this.userInfoService.GetHaventStyleOfWorkUserIDList(userInfo.ID);
             return View();
         }
         public ActionResult ChangePassword(int? id, string password)
