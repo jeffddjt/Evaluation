@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Rights/AddUser.cshtml" hash="1dc92fa5" filehash="ffffc6ae79a8d09c" flags="110000" assembly="App_Web_uf1oj1bp" type="ASP._Page_Views_Rights_AddUser_cshtml">
+<preserve resultType="2" virtualPath="/Views/Rights/AddUser.cshtml" hash="1dc92fa5" filehash="ffffc8c94a375fa6" flags="110000" assembly="App_Web_wvskfgrj" type="ASP._Page_Views_Rights_AddUser_cshtml">
     <filedeps>
         <filedep name="/Views/Rights/AddUser.cshtml" />
     </filedeps>

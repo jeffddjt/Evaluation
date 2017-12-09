@@ -6,3 +6,7 @@ D:\Projects\建材学院民主测评系统\JTApp.DataObject\bin\Debug\JTApp.Data
 D:\Projects\建材学院民主测评系统\JTApp.DataObject\bin\Debug\JTApp.DataObject.pdb
 D:\Projects\建材学院民主测评系统\JTApp.DataObject\obj\Debug\JTApp.DataObject.dll
 D:\Projects\建材学院民主测评系统\JTApp.DataObject\obj\Debug\JTApp.DataObject.pdb
+G:\jcxy\JTApp.DataObject\bin\Debug\JTApp.DataObject.dll
+G:\jcxy\JTApp.DataObject\bin\Debug\JTApp.DataObject.pdb
+G:\jcxy\JTApp.DataObject\obj\Debug\JTApp.DataObject.dll
+G:\jcxy\JTApp.DataObject\obj\Debug\JTApp.DataObject.pdb

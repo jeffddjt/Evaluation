@@ -19,3 +19,8 @@ D:\Projects\建材学院民主测评系统\Evaluation\bin\JTApp.Application.dll
 D:\Projects\建材学院民主测评系统\Evaluation\bin\JTApp.Application.pdb
 D:\Projects\建材学院民主测评系统\JTApp.WebUI\bin\JTApp.Application.dll
 D:\Projects\建材学院民主测评系统\JTApp.WebUI\bin\JTApp.Application.pdb
+G:\jcxy\JTApp.WebUI\bin\JTApp.Application.dll
+G:\jcxy\JTApp.WebUI\bin\JTApp.Application.pdb
+G:\jcxy\JTApp.Application\obj\Debug\JTApp.Application.csprojResolveAssemblyReference.cache
+G:\jcxy\JTApp.Application\obj\Debug\JTApp.Application.dll
+G:\jcxy\JTApp.Application\obj\Debug\JTApp.Application.pdb

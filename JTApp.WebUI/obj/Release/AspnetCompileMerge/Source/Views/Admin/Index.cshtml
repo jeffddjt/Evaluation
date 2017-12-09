@@ -4,7 +4,8 @@
     UserInfoDataObject userInfo = ViewData["UserInfo"] as UserInfoDataObject;
     List<DepartmentDataObject> departList = ViewData["DepartmentList"] as List<DepartmentDataObject>;
     int[] beMesuredUserIDs = userInfo.BeMeasuredUserInfoIDs;
-    
+    int[] haventEval = (int[])ViewData["HaventEval"];
+    int[] haventStyleOfWork = (int[])ViewData["HaventStyleOfWork"];
 
 }
 <!DOCTYPE html>
@@ -205,9 +206,9 @@
                            target="menuFrame"><i class="glyph-icon icon-reorder"></i>民主测评(@department.Name)</a>
                         <ul>
                             @foreach (UserInfoDataObject member in department.GetAllUserList())
-                    {
-                        if (!beMesuredUserIDs.Contains(member.ID))
-                        { continue; }
+                            {
+                                if (!beMesuredUserIDs.Contains(member.ID) && !haventEval.Contains(member.ID))
+                                { continue; }
                         <li>
                             <a href="~/Evaluation/FillEvaluationTable?id=@member.ID" target="menuFrame" onclick="setTitle('民主测评(@department.Name)-@member.UserName')">
                                 <i class="glyph-icon icon-chevron-right"></i>
@@ -229,7 +230,7 @@
                     <ul>
                         @foreach (UserInfoDataObject member in department.GetAllUserList())
                         {
-                            if (!beMesuredUserIDs.Contains(member.ID))
+                            if (!beMesuredUserIDs.Contains(member.ID) && !haventStyleOfWork.Contains(member.ID))
                             { continue; }
                             <li>
                                 <a href="~/Evaluation/StyleOfWork?id=@member.ID" target="menuFrame" onclick="setTitle('德和作风(@department.Name)-@member.UserName')">

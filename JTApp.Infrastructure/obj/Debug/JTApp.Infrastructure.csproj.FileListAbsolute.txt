@@ -10,3 +10,15 @@ D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Debug\NPOI.O
 D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Debug\NPOI.OpenXml4Net.dll
 D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Debug\NPOI.OpenXmlFormats.dll
 D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Debug\NPOI.xml
+G:\jcxy\JTApp.Infrastructure\bin\Debug\JTApp.Infrastructure.dll
+G:\jcxy\JTApp.Infrastructure\bin\Debug\JTApp.Infrastructure.pdb
+G:\jcxy\JTApp.Infrastructure\bin\Debug\Autofac.dll
+G:\jcxy\JTApp.Infrastructure\bin\Debug\ICSharpCode.SharpZipLib.dll
+G:\jcxy\JTApp.Infrastructure\bin\Debug\NPOI.dll
+G:\jcxy\JTApp.Infrastructure\bin\Debug\NPOI.OOXML.dll
+G:\jcxy\JTApp.Infrastructure\bin\Debug\NPOI.OpenXml4Net.dll
+G:\jcxy\JTApp.Infrastructure\bin\Debug\NPOI.OpenXmlFormats.dll
+G:\jcxy\JTApp.Infrastructure\bin\Debug\Autofac.xml
+G:\jcxy\JTApp.Infrastructure\bin\Debug\NPOI.xml
+G:\jcxy\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.dll
+G:\jcxy\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.pdb

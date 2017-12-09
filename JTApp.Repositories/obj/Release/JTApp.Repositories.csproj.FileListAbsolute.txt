@@ -12,3 +12,17 @@ D:\Projects\建材学院民主测评系统\JTApp.Repositories\bin\Release\LinqKi
 D:\Projects\建材学院民主测评系统\JTApp.Repositories\obj\Release\JTApp.Repositories.csprojResolveAssemblyReference.cache
 D:\Projects\建材学院民主测评系统\JTApp.Repositories\obj\Release\JTApp.Repositories.dll
 D:\Projects\建材学院民主测评系统\JTApp.Repositories\obj\Release\JTApp.Repositories.pdb
+G:\jcxy\JTApp.Repositories\bin\Release\JTApp.Repositories.dll.config
+G:\jcxy\JTApp.Repositories\bin\Release\JTApp.Repositories.dll
+G:\jcxy\JTApp.Repositories\bin\Release\JTApp.Repositories.pdb
+G:\jcxy\JTApp.Repositories\bin\Release\EntityFramework.dll
+G:\jcxy\JTApp.Repositories\bin\Release\EntityFramework.SqlServer.dll
+G:\jcxy\JTApp.Repositories\bin\Release\JTApp.Domain.dll
+G:\jcxy\JTApp.Repositories\bin\Release\LinqKit.dll
+G:\jcxy\JTApp.Repositories\bin\Release\JTApp.Domain.pdb
+G:\jcxy\JTApp.Repositories\bin\Release\EntityFramework.xml
+G:\jcxy\JTApp.Repositories\bin\Release\EntityFramework.SqlServer.xml
+G:\jcxy\JTApp.Repositories\bin\Release\LinqKit.xml
+G:\jcxy\JTApp.Repositories\obj\Release\JTApp.Repositories.csprojResolveAssemblyReference.cache
+G:\jcxy\JTApp.Repositories\obj\Release\JTApp.Repositories.dll
+G:\jcxy\JTApp.Repositories\obj\Release\JTApp.Repositories.pdb

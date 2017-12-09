@@ -15,6 +15,8 @@ namespace JTApp.ServiceContracts
         UserInfoDataObject CheckLogin(string workNo, string password);
         List<string> GetFunctionList(UserInfoDataObject userInfo);
         UserInfoDataObject GetEvaUser(int userInfoID);
+        int[] GetHaventEvaUserIDList(int userInfoID);
+        int[] GetHaventStyleOfWorkUserIDList(int userInfoID);
         List<UserInfoDataObject> GetList(JTPager pager);
         int Import(IList<UserInfoDataObject> list);
         IList<UserInfoDataObject> GetAlready(JTPager pager);

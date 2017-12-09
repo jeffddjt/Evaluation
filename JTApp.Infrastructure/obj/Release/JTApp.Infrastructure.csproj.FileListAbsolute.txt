@@ -10,3 +10,15 @@ D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\Auto
 D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\bin\Release\NPOI.xml
 D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\obj\Release\JTApp.Infrastructure.dll
 D:\Projects\建材学院民主测评系统\JTApp.Infrastructure\obj\Release\JTApp.Infrastructure.pdb
+G:\jcxy\JTApp.Infrastructure\bin\Release\JTApp.Infrastructure.dll
+G:\jcxy\JTApp.Infrastructure\bin\Release\JTApp.Infrastructure.pdb
+G:\jcxy\JTApp.Infrastructure\bin\Release\Autofac.dll
+G:\jcxy\JTApp.Infrastructure\bin\Release\ICSharpCode.SharpZipLib.dll
+G:\jcxy\JTApp.Infrastructure\bin\Release\NPOI.dll
+G:\jcxy\JTApp.Infrastructure\bin\Release\NPOI.OOXML.dll
+G:\jcxy\JTApp.Infrastructure\bin\Release\NPOI.OpenXml4Net.dll
+G:\jcxy\JTApp.Infrastructure\bin\Release\NPOI.OpenXmlFormats.dll
+G:\jcxy\JTApp.Infrastructure\bin\Release\Autofac.xml
+G:\jcxy\JTApp.Infrastructure\bin\Release\NPOI.xml
+G:\jcxy\JTApp.Infrastructure\obj\Release\JTApp.Infrastructure.dll
+G:\jcxy\JTApp.Infrastructure\obj\Release\JTApp.Infrastructure.pdb

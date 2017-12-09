@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Department/DepartmentManage.cshtml" hash="1dc92fa5" filehash="ffffc539e89bc37a" flags="110000" assembly="App_Web_xamrj3s3" type="ASP._Page_Views_Department_DepartmentManage_cshtml">
+<preserve resultType="2" virtualPath="/Views/Department/DepartmentManage.cshtml" hash="1dc92fa5" filehash="287fac3f7e2e" flags="110000" assembly="App_Web_wkc5eg0r" type="ASP._Page_Views_Department_DepartmentManage_cshtml">
     <filedeps>
         <filedep name="/Views/Department/DepartmentManage.cshtml" />
     </filedeps>

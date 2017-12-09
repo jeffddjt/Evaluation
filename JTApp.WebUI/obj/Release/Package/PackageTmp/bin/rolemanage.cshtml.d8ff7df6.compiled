@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Rights/RoleManage.cshtml" hash="1dc92fa5" filehash="ffffd3649d6e9372" flags="110000" assembly="App_Web_uf1oj1bp" type="ASP._Page_Views_Rights_RoleManage_cshtml">
+<preserve resultType="2" virtualPath="/Views/Rights/RoleManage.cshtml" hash="1dc92fa5" filehash="fffff01c871a9bee" flags="110000" assembly="App_Web_wvskfgrj" type="ASP._Page_Views_Rights_RoleManage_cshtml">
     <filedeps>
         <filedep name="/Views/Rights/RoleManage.cshtml" />
     </filedeps>

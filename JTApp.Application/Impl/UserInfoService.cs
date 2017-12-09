@@ -120,6 +120,15 @@ namespace JTApp.Application.Impl
 
         }
 
+        public int[] GetHaventEvaUserIDList(int userInfoID)
+        {
+            return this.Repository.Get(p => p.ID == userInfoID).SelectMany(p => p.EvaluationTable.Select(k => k.BeMeasuredID)).ToArray();
+        }
+        public int[] GetHaventStyleOfWorkUserIDList(int userInfoID)
+        {
+            return this.Repository.Get(p => p.ID == userInfoID).SelectMany(p => p.StyleOfWork.Select(k => k.BeMeasuredID)).ToArray();
+        }
+
         public List<string> GetFunctionList(UserInfoDataObject userInfo)
         {
             List<string> functionList = new List<string>();
