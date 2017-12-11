@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/PersonManage/PartakePerson.cshtml" hash="1dc92fa5" filehash="ffffc281c8935a1b" flags="110000" assembly="App_Web_m1xjmfev" type="ASP._Page_Views_PersonManage_PartakePerson_cshtml">
+<preserve resultType="2" virtualPath="/Views/PersonManage/PartakePerson.cshtml" hash="1dc92fa5" filehash="ffffc281c8935a1b" flags="110000" assembly="App_Web_4yndz2sk" type="ASP._Page_Views_PersonManage_PartakePerson_cshtml">
     <filedeps>
         <filedep name="/Views/PersonManage/PartakePerson.cshtml" />
     </filedeps>

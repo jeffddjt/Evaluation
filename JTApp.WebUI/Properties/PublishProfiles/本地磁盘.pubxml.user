@@ -247,28 +247,28 @@
       <publishTime>12/09/2017 13:46:21</publishTime>
     </File>
     <File Include="bin/addbemeasured.cshtml.82aa227c.compiled">
-      <publishTime>12/09/2017 15:08:37</publishTime>
+      <publishTime>12/11/2017 11:56:59</publishTime>
     </File>
     <File Include="bin/addrights.cshtml.d8ff7df6.compiled">
-      <publishTime>12/09/2017 15:08:39</publishTime>
+      <publishTime>12/11/2017 11:57:01</publishTime>
     </File>
     <File Include="bin/adduser.cshtml.7dcb3a60.compiled">
-      <publishTime>12/09/2017 15:08:32</publishTime>
+      <publishTime>12/11/2017 11:56:53</publishTime>
     </File>
     <File Include="bin/adduser.cshtml.d8ff7df6.compiled">
-      <publishTime>12/09/2017 15:08:39</publishTime>
+      <publishTime>12/11/2017 11:57:01</publishTime>
     </File>
     <File Include="bin/adduserinfotomeasured.cshtml.82aa227c.compiled">
-      <publishTime>12/09/2017 15:08:37</publishTime>
+      <publishTime>12/11/2017 11:56:59</publishTime>
     </File>
     <File Include="bin/ApplicationInsights.config">
       <publishTime>12/09/2017 13:46:21</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>12/09/2017 15:08:27</publishTime>
+      <publishTime>12/11/2017 11:56:47</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>12/09/2017 15:08:27</publishTime>
+      <publishTime>12/11/2017 11:56:46</publishTime>
     </File>
     <File Include="bin/App_Web_0kelxe1w.dll">
       <publishTime>12/09/2017 15:08:34</publishTime>
@@ -291,6 +291,9 @@
     <File Include="bin/App_Web_23mwhvfy.dll">
       <publishTime>10/24/2017 21:20:59</publishTime>
     </File>
+    <File Include="bin/App_Web_2fsgm4ps.dll">
+      <publishTime>12/11/2017 11:56:57</publishTime>
+    </File>
     <File Include="bin/App_Web_2u2fcyq5.dll">
       <publishTime>12/09/2017 15:07:28</publishTime>
     </File>
@@ -306,11 +309,23 @@
     <File Include="bin/App_Web_3tcqxfxh.dll">
       <publishTime>12/09/2017 13:56:10</publishTime>
     </File>
+    <File Include="bin/App_Web_44otjbfo.dll">
+      <publishTime>12/11/2017 11:56:55</publishTime>
+    </File>
+    <File Include="bin/App_Web_4jd1v5ji.dll">
+      <publishTime>12/11/2017 11:56:51</publishTime>
+    </File>
     <File Include="bin/App_Web_4jzp5fo3.dll">
       <publishTime>12/09/2017 15:08:39</publishTime>
     </File>
+    <File Include="bin/App_Web_4yndz2sk.dll">
+      <publishTime>12/11/2017 11:56:59</publishTime>
+    </File>
     <File Include="bin/App_Web_52vqn1e2.dll">
       <publishTime>10/24/2017 21:15:29</publishTime>
+    </File>
+    <File Include="bin/App_Web_54tf50gy.dll">
+      <publishTime>12/11/2017 11:56:54</publishTime>
     </File>
     <File Include="bin/App_Web_alv2vx1j.dll">
       <publishTime>10/24/2017 21:23:36</publishTime>
@@ -320,6 +335,9 @@
     </File>
     <File Include="bin/App_Web_c5pr5caf.dll">
       <publishTime>10/24/2017 21:23:35</publishTime>
+    </File>
+    <File Include="bin/App_Web_cexnfhyo.dll">
+      <publishTime>12/11/2017 11:57:00</publishTime>
     </File>
     <File Include="bin/App_Web_ciwzlnqe.dll">
       <publishTime>10/24/2017 21:21:00</publishTime>
@@ -366,6 +384,9 @@
     <File Include="bin/App_Web_kum33imk.dll">
       <publishTime>10/24/2017 21:15:31</publishTime>
     </File>
+    <File Include="bin/App_Web_kwawz2ny.dll">
+      <publishTime>12/11/2017 11:56:51</publishTime>
+    </File>
     <File Include="bin/App_Web_l13est5y.dll">
       <publishTime>12/09/2017 13:56:15</publishTime>
     </File>
@@ -393,6 +414,9 @@
     <File Include="bin/App_Web_nq40uw4k.dll">
       <publishTime>10/24/2017 21:21:00</publishTime>
     </File>
+    <File Include="bin/App_Web_o3xwbux5.dll">
+      <publishTime>12/11/2017 11:56:57</publishTime>
+    </File>
     <File Include="bin/App_Web_odzbggad.dll">
       <publishTime>10/24/2017 21:20:58</publishTime>
     </File>
@@ -407,6 +431,9 @@
     </File>
     <File Include="bin/App_Web_qj35aatm.dll">
       <publishTime>12/09/2017 15:07:25</publishTime>
+    </File>
+    <File Include="bin/App_Web_qkczybfa.dll">
+      <publishTime>12/11/2017 11:57:01</publishTime>
     </File>
     <File Include="bin/App_Web_sgqv4y20.dll">
       <publishTime>10/24/2017 21:15:32</publishTime>
@@ -425,6 +452,9 @@
     </File>
     <File Include="bin/App_Web_uaisbfai.dll">
       <publishTime>12/09/2017 15:07:33</publishTime>
+    </File>
+    <File Include="bin/App_Web_udfnjgcz.dll">
+      <publishTime>12/11/2017 11:56:53</publishTime>
     </File>
     <File Include="bin/App_Web_uf1oj1bp.dll">
       <publishTime>10/24/2017 21:23:38</publishTime>
@@ -459,6 +489,9 @@
     <File Include="bin/App_Web_y30y0vum.dll">
       <publishTime>12/09/2017 15:08:35</publishTime>
     </File>
+    <File Include="bin/App_Web_ygyasfxm.dll">
+      <publishTime>12/11/2017 11:56:53</publishTime>
+    </File>
     <File Include="bin/App_Web_z0ayzj1h.dll">
       <publishTime>12/09/2017 15:07:26</publishTime>
     </File>
@@ -472,55 +505,55 @@
       <publishTime>12/09/2017 13:46:24</publishTime>
     </File>
     <File Include="bin/departmentadd.cshtml.7dcb3a60.compiled">
-      <publishTime>12/09/2017 15:08:32</publishTime>
+      <publishTime>12/11/2017 11:56:53</publishTime>
     </File>
     <File Include="bin/departmentedit.cshtml.7dcb3a60.compiled">
-      <publishTime>12/09/2017 15:08:32</publishTime>
+      <publishTime>12/11/2017 11:56:53</publishTime>
     </File>
     <File Include="bin/departmentmanage.cshtml.7dcb3a60.compiled">
-      <publishTime>12/09/2017 15:08:32</publishTime>
+      <publishTime>12/11/2017 11:56:53</publishTime>
     </File>
     <File Include="bin/dutiesmanage.cshtml.d818aa28.compiled">
-      <publishTime>12/09/2017 15:08:33</publishTime>
+      <publishTime>12/11/2017 11:56:53</publishTime>
     </File>
     <File Include="bin/editbemeasured.cshtml.82aa227c.compiled">
-      <publishTime>12/09/2017 15:08:37</publishTime>
+      <publishTime>12/11/2017 11:56:59</publishTime>
     </File>
     <File Include="bin/editrole.cshtml.d8ff7df6.compiled">
-      <publishTime>12/09/2017 15:08:39</publishTime>
+      <publishTime>12/11/2017 11:57:01</publishTime>
     </File>
     <File Include="bin/edituserinfo.cshtml.82aa227c.compiled">
-      <publishTime>12/09/2017 15:08:37</publishTime>
+      <publishTime>12/11/2017 11:56:59</publishTime>
     </File>
     <File Include="bin/evaluationcountresult.cshtml.1a318701.compiled">
-      <publishTime>12/09/2017 15:08:36</publishTime>
+      <publishTime>12/11/2017 11:56:57</publishTime>
     </File>
     <File Include="bin/evaluationquery.cshtml.1a318701.compiled">
-      <publishTime>12/09/2017 15:08:36</publishTime>
+      <publishTime>12/11/2017 11:56:57</publishTime>
     </File>
     <File Include="bin/evaluationtotal.cshtml.1a318701.compiled">
-      <publishTime>12/09/2017 15:08:35</publishTime>
+      <publishTime>12/11/2017 11:56:57</publishTime>
     </File>
     <File Include="bin/fillevaluationtable1.cshtml.b0635663.compiled">
-      <publishTime>12/09/2017 15:08:34</publishTime>
+      <publishTime>12/11/2017 11:56:55</publishTime>
     </File>
     <File Include="bin/fillevaluationtable2.cshtml.b0635663.compiled">
-      <publishTime>12/09/2017 15:08:34</publishTime>
+      <publishTime>12/11/2017 11:56:55</publishTime>
     </File>
     <File Include="bin/ICSharpCode.SharpZipLib.dll">
       <publishTime>12/09/2017 13:46:25</publishTime>
     </File>
     <File Include="bin/importuserinfo.cshtml.82aa227c.compiled">
-      <publishTime>12/09/2017 15:08:37</publishTime>
+      <publishTime>12/11/2017 11:56:59</publishTime>
     </File>
     <File Include="bin/index.cshtml.925dc4ed.compiled">
-      <publishTime>12/09/2017 15:08:31</publishTime>
+      <publishTime>12/11/2017 11:56:51</publishTime>
     </File>
     <File Include="bin/index.cshtml.95bdbf9c.compiled">
-      <publishTime>12/09/2017 15:08:38</publishTime>
+      <publishTime>12/11/2017 11:57:00</publishTime>
     </File>
     <File Include="bin/index.cshtml.e5736d70.compiled">
-      <publishTime>12/09/2017 15:08:31</publishTime>
+      <publishTime>12/11/2017 11:56:52</publishTime>
     </File>
     <File Include="bin/JTApp.DataObject.dll">
       <publishTime>12/09/2017 13:56:43</publishTime>
@@ -535,7 +568,7 @@
       <publishTime>12/09/2017 15:06:53</publishTime>
     </File>
     <File Include="bin/login.cshtml.a8d08dba.compiled">
-      <publishTime>12/09/2017 15:08:36</publishTime>
+      <publishTime>12/11/2017 11:56:57</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>12/09/2017 13:46:24</publishTime>
@@ -580,13 +613,13 @@
       <publishTime>12/09/2017 13:46:25</publishTime>
     </File>
     <File Include="bin/partakeperson.cshtml.82aa227c.compiled">
-      <publishTime>12/09/2017 15:08:37</publishTime>
+      <publishTime>12/11/2017 11:56:59</publishTime>
     </File>
     <File Include="bin/person.cshtml.82aa227c.compiled">
-      <publishTime>12/09/2017 15:08:37</publishTime>
+      <publishTime>12/11/2017 11:56:59</publishTime>
     </File>
     <File Include="bin/rolemanage.cshtml.d8ff7df6.compiled">
-      <publishTime>12/09/2017 15:08:39</publishTime>
+      <publishTime>12/11/2017 11:57:01</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>12/09/2017 13:46:25</publishTime>
@@ -625,10 +658,10 @@
       <publishTime>12/09/2017 13:46:25</publishTime>
     </File>
     <File Include="bin/showerror.cshtml.62599428.compiled">
-      <publishTime>12/09/2017 15:08:33</publishTime>
+      <publishTime>12/11/2017 11:56:54</publishTime>
     </File>
     <File Include="bin/styleofwork.cshtml.b0635663.compiled">
-      <publishTime>12/09/2017 15:08:34</publishTime>
+      <publishTime>12/11/2017 11:56:55</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>12/09/2017 13:46:24</publishTime>
@@ -649,16 +682,16 @@
       <publishTime>12/09/2017 13:46:24</publishTime>
     </File>
     <File Include="bin/Templete/人员导入模板.xls">
-      <publishTime>12/09/2017 14:08:25</publishTime>
+      <publishTime>12/11/2017 11:55:05</publishTime>
     </File>
     <File Include="bin/time.cshtml.925dc4ed.compiled">
-      <publishTime>12/09/2017 15:08:31</publishTime>
+      <publishTime>12/11/2017 11:56:51</publishTime>
     </File>
     <File Include="bin/timeover.cshtml.925dc4ed.compiled">
-      <publishTime>12/09/2017 15:08:31</publishTime>
+      <publishTime>12/11/2017 11:56:51</publishTime>
     </File>
     <File Include="bin/usercenter.cshtml.925dc4ed.compiled">
-      <publishTime>12/09/2017 15:08:31</publishTime>
+      <publishTime>12/11/2017 11:56:51</publishTime>
     </File>
     <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
       <publishTime>12/09/2017 13:46:24</publishTime>
@@ -682,7 +715,7 @@
       <publishTime>12/09/2017 13:46:23</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>12/09/2017 15:08:12</publishTime>
+      <publishTime>12/11/2017 11:56:27</publishTime>
     </File>
     <File Include="scripts/ai.0.22.9-build00167.js">
       <publishTime>12/09/2017 13:46:23</publishTime>
@@ -691,97 +724,97 @@
       <publishTime>12/09/2017 13:46:23</publishTime>
     </File>
     <File Include="Templete/人员导入模板.xls">
-      <publishTime>12/09/2017 14:08:25</publishTime>
+      <publishTime>12/11/2017 11:55:05</publishTime>
     </File>
     <File Include="Views/Admin/Index.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Admin/Time.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Admin/TimeOver.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Admin/UserCenter.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Article/Index.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Department/AddUser.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Department/DepartmentAdd.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Department/DepartmentEdit.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Department/DepartmentManage.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Duties/DutiesManage.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Error/ShowError.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Evaluation/FillEvaluationTable1.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Evaluation/FillEvaluationTable2.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Evaluation/StyleOfWork.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/EvaluationResult/EvaluationCountResult.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/EvaluationResult/EvaluationQuery.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/EvaluationResult/EvaluationTotal.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/PersonManage/AddBeMeasured.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/PersonManage/AddUserInfoToMeasured.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:05</publishTime>
     </File>
     <File Include="Views/PersonManage/EditBeMeasured.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:06</publishTime>
     </File>
     <File Include="Views/PersonManage/EditUserInfo.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:06</publishTime>
     </File>
     <File Include="Views/PersonManage/ImportUserInfo.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:06</publishTime>
     </File>
     <File Include="Views/PersonManage/PartakePerson.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:06</publishTime>
     </File>
     <File Include="Views/PersonManage/Person.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:06</publishTime>
     </File>
     <File Include="Views/Review/Index.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:06</publishTime>
     </File>
     <File Include="Views/Rights/AddRights.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:06</publishTime>
     </File>
     <File Include="Views/Rights/AddUser.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:06</publishTime>
     </File>
     <File Include="Views/Rights/EditRole.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:06</publishTime>
     </File>
     <File Include="Views/Rights/RoleManage.cshtml">
-      <publishTime>12/09/2017 15:08:40</publishTime>
+      <publishTime>12/11/2017 11:57:06</publishTime>
     </File>
     <File Include="Views/web.config">
       <publishTime>12/09/2017 13:46:21</publishTime>
