@@ -10,3 +10,4 @@ G:\jcxy\JTApp.DataObject\bin\Debug\JTApp.DataObject.dll
 G:\jcxy\JTApp.DataObject\bin\Debug\JTApp.DataObject.pdb
 G:\jcxy\JTApp.DataObject\obj\Debug\JTApp.DataObject.dll
 G:\jcxy\JTApp.DataObject\obj\Debug\JTApp.DataObject.pdb
+G:\jcxy\JTApp.DataObject\obj\Debug\JTApp.DataObject.csprojResolveAssemblyReference.cache

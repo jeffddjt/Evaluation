@@ -143,7 +143,7 @@ namespace JTApp.Application.Impl
                 UserInfo userinfo = this.Repository.Get(p => p.ID == userInfoID).FirstOrDefault();
                 if (userinfo == null || userinfo.StyleOfWork == null || userinfo.StyleOfWork.Count <= 0)
                     return result;
-                return userinfo.StyleOfWork.Where(p=>p.Score>0).Select(p => p.BeMeasuredID).ToArray();
+                return userinfo.StyleOfWork.Where(p=>p.Score<=0).Select(p => p.BeMeasuredID).ToArray();
             }
             catch
             {

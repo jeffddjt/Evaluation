@@ -22,3 +22,4 @@ G:\jcxy\JTApp.Infrastructure\bin\Debug\Autofac.xml
 G:\jcxy\JTApp.Infrastructure\bin\Debug\NPOI.xml
 G:\jcxy\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.dll
 G:\jcxy\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.pdb
+G:\jcxy\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.csprojResolveAssemblyReference.cache
