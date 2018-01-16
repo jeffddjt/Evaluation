@@ -238,7 +238,7 @@ namespace JTApp.WebUI.Controllers
                             Ratio = p.Key,
                             Score = p.Sum(k => k.EvaluationTableDetail.Where(t => t.ReviewID == review.ID).Sum(s => s.Score)) * p.Key / 100 / p.Count()
                         });
-                    double score = query.Sum(p => p.Score);
+                    double score = (double)query.Sum(p => Math.Round((decimal)p.Score, 2, MidpointRounding.AwayFromZero));
                     row[review.Name] = score;
                     sum += score;
                 }
@@ -372,7 +372,7 @@ namespace JTApp.WebUI.Controllers
                             Ratio = p.Key,
                             Score = p.Sum(k => k.EvaluationTableDetail.Where(t => t.ReviewID == review.ID).Sum(s => s.Score)) * p.Key / 100 / p.Count()
                         });
-                    double score = query.Sum(p => p.Score);
+                    double score = (double)query.Sum(p => Math.Round((decimal)p.Score,2,MidpointRounding.AwayFromZero));
                     row[review.Name] = score;
                     sum += score;
                 }
