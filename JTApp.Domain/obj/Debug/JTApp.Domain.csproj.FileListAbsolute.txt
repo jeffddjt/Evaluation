@@ -11,3 +11,8 @@ G:\jcxy\JTApp.WebUI\bin\JTApp.Domain.pdb
 G:\jcxy\JTApp.Domain\obj\Debug\JTApp.Domain.dll
 G:\jcxy\JTApp.Domain\obj\Debug\JTApp.Domain.pdb
 G:\jcxy\JTApp.Domain\obj\Debug\JTApp.Domain.csprojResolveAssemblyReference.cache
+D:\Projects\Evaluation\JTApp.WebUI\bin\JTApp.Domain.dll
+D:\Projects\Evaluation\JTApp.WebUI\bin\JTApp.Domain.pdb
+D:\Projects\Evaluation\JTApp.Domain\obj\Debug\JTApp.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\Evaluation\JTApp.Domain\obj\Debug\JTApp.Domain.dll
+D:\Projects\Evaluation\JTApp.Domain\obj\Debug\JTApp.Domain.pdb

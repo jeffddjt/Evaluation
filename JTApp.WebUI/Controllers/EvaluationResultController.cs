@@ -285,7 +285,7 @@ namespace JTApp.WebUI.Controllers
                             Score=p.Sum(k=>k.Score)*p.Key/100/p.Count()
                         }
                     );
-                row["分数"] = query.Sum(p => p.Score);
+                row["分数"] = (double)query.Sum(p => Math.Round((decimal)p.Score,2,MidpointRounding.AwayFromZero));
                 dt.Rows.Add(row);
             }
             ViewResult view = new ViewResult();
@@ -349,7 +349,6 @@ namespace JTApp.WebUI.Controllers
             int[] ids = dept.GetIDArray();
             int year = this.timeOverService.GetFirst().Year;
             List<BeMeasuredDataObject> beMeasuredList = this.beMeasuredService.GetList(ids,year);
-            int recordCount = beMeasuredList.Count();
             IList<ReviewDataObject> reviewList = this.reviewService.GetList(year);
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[] { new DataColumn("工号"), new DataColumn("姓名") });
@@ -366,7 +365,7 @@ namespace JTApp.WebUI.Controllers
                 double sum = 0;
                 foreach (ReviewDataObject review in reviewList)
                 {
-                    var query = bm.EvaluationTableList.GroupBy(p => p.Ratio)
+                    var query = bm.EvaluationTableList.Where(p => p.Submit).GroupBy(p => p.Ratio)
                         .Select(p => new
                         {
                             Ratio = p.Key,
@@ -397,7 +396,7 @@ namespace JTApp.WebUI.Controllers
                 DataRow row = dt.NewRow();
                 row["工号"] = bm.UserInfo.WorkNo;
                 row["姓名"] = bm.UserInfo.UserName;
-                var query = bm.StyleOfWorkList.GroupBy(p => p.Ratio)
+                var query = bm.StyleOfWorkList.Where(p => p.Score > 0).GroupBy(p => p.Ratio)
                     .Select(p =>
                         new
                         {
@@ -405,7 +404,7 @@ namespace JTApp.WebUI.Controllers
                             Score = p.Sum(k => k.Score) * p.Key / 100 / p.Count()
                         }
                     );
-                row["分数"] = query.Sum(p => p.Score);
+                row["分数"] = (double)query.Sum(p => Math.Round((decimal)p.Score, 2, MidpointRounding.AwayFromZero));
                 dt.Rows.Add(row);
             }
 

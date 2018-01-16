@@ -23,3 +23,16 @@ G:\jcxy\JTApp.Infrastructure\bin\Debug\NPOI.xml
 G:\jcxy\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.dll
 G:\jcxy\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.pdb
 G:\jcxy\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.csprojResolveAssemblyReference.cache
+D:\Projects\Evaluation\JTApp.Infrastructure\bin\Debug\JTApp.Infrastructure.dll
+D:\Projects\Evaluation\JTApp.Infrastructure\bin\Debug\JTApp.Infrastructure.pdb
+D:\Projects\Evaluation\JTApp.Infrastructure\bin\Debug\Autofac.dll
+D:\Projects\Evaluation\JTApp.Infrastructure\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Projects\Evaluation\JTApp.Infrastructure\bin\Debug\NPOI.dll
+D:\Projects\Evaluation\JTApp.Infrastructure\bin\Debug\NPOI.OOXML.dll
+D:\Projects\Evaluation\JTApp.Infrastructure\bin\Debug\NPOI.OpenXml4Net.dll
+D:\Projects\Evaluation\JTApp.Infrastructure\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\Projects\Evaluation\JTApp.Infrastructure\bin\Debug\Autofac.xml
+D:\Projects\Evaluation\JTApp.Infrastructure\bin\Debug\NPOI.xml
+D:\Projects\Evaluation\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Projects\Evaluation\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.dll
+D:\Projects\Evaluation\JTApp.Infrastructure\obj\Debug\JTApp.Infrastructure.pdb

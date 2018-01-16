@@ -24,3 +24,10 @@ G:\jcxy\JTApp.WebUI\bin\JTApp.Repositories.pdb
 G:\jcxy\JTApp.Repositories\obj\Debug\JTApp.Repositories.csprojResolveAssemblyReference.cache
 G:\jcxy\JTApp.Repositories\obj\Debug\JTApp.Repositories.dll
 G:\jcxy\JTApp.Repositories\obj\Debug\JTApp.Repositories.pdb
+D:\Projects\Evaluation\JTApp.WebUI\bin\JTApp.Repositories.dll.config
+D:\Projects\Evaluation\JTApp.WebUI\bin\JTApp.Repositories.dll
+D:\Projects\Evaluation\JTApp.WebUI\bin\JTApp.Repositories.pdb
+D:\Projects\Evaluation\JTApp.Repositories\obj\Debug\JTApp.Repositories.csprojResolveAssemblyReference.cache
+D:\Projects\Evaluation\JTApp.Repositories\obj\Debug\JTApp.Repositories.csproj.CoreCompileInputs.cache
+D:\Projects\Evaluation\JTApp.Repositories\obj\Debug\JTApp.Repositories.dll
+D:\Projects\Evaluation\JTApp.Repositories\obj\Debug\JTApp.Repositories.pdb

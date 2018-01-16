@@ -24,3 +24,9 @@ G:\jcxy\JTApp.WebUI\bin\JTApp.Application.pdb
 G:\jcxy\JTApp.Application\obj\Debug\JTApp.Application.csprojResolveAssemblyReference.cache
 G:\jcxy\JTApp.Application\obj\Debug\JTApp.Application.dll
 G:\jcxy\JTApp.Application\obj\Debug\JTApp.Application.pdb
+D:\Projects\Evaluation\JTApp.WebUI\bin\JTApp.Application.dll
+D:\Projects\Evaluation\JTApp.WebUI\bin\JTApp.Application.pdb
+D:\Projects\Evaluation\JTApp.Application\obj\Debug\JTApp.Application.csprojResolveAssemblyReference.cache
+D:\Projects\Evaluation\JTApp.Application\obj\Debug\JTApp.Application.csproj.CoreCompileInputs.cache
+D:\Projects\Evaluation\JTApp.Application\obj\Debug\JTApp.Application.dll
+D:\Projects\Evaluation\JTApp.Application\obj\Debug\JTApp.Application.pdb
